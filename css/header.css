@@ -70,29 +70,6 @@ header{
 }
 /**----- Fin de Header -----**/
 
-/**------ Contenido --------**/
-main{
-    width: 90%;
-    max-width: 1000px;
-    min-height: 400px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0px 2px 5px rgb(0,0,0,0.75);
-}
-main  article h1{
-    font-weight: normal;
-    margin-bottom: 0.5em;
-}
-main article hr{
-    margin-bottom: 1em;
-    height: 2px;
-    background: #4357ad;
-    border: none;
-}
-
-/**------ Fin de Contenido --------*/
-
 /**---- Efectos del Menu Nav ------*/
 .headroom {
     transition: transform .3s ease;
