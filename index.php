@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
     <!-- Original Estilo-->
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/content.css">
 </head>
 <body>
     <header id="header">
         <nav class="menu">
             <div class="logo_usaid">
-                <a href="https://www.facebook.com/CDSSAFGK/"><img src="img/logo/usaid.png" alt=""></a>
+                <a href="https://www.facebook.com/CDSSAFGK/"><img src="public/img/logo/usaid.png" alt=""></a>
                 <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
             </div>
             <div class="enlaces" id="enlaces">
@@ -57,9 +57,9 @@
     <footer class="footer">
 
         <div class="footer-left">
-            <a href=""><img class="img_usaid" src="img/logo/usaid.png" alt=""></a>
+            <a href=""><img class="img_usaid" src="public/img/logo/usaid.png" alt=""></a>
             <br/>
-            <a href=""><img class="img_fundacion" src="img/logo/fundacion.png" alt=""></a> 
+            <a href=""><img class="img_fundacion" src="public/img/logo/fundacion.png" alt=""></a> 
             <br/>
         </div>
 

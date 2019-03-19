@@ -51,6 +51,18 @@ class EstudianteModel extends Model  {
 		$this->query = "DELETE FROM estudiante WHERE id_estudiante = $id_estudiante";
 		$this->set_query();
     }
+
+    //Metodo que se encarga de obtener el registro en base al ID
+    public function findById($id_estudiante = ''){
+        $this->query = "SELECT * FROM estudiante WHERE id_estudiante = $id_estudiante;";
+        $this->get_query();
+
+        $data = array();
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        return $data;
+    }
     
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {

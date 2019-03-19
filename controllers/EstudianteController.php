@@ -22,6 +22,10 @@ class EstudianteController {
 	public function delete( $id_estudiante = '' ) {
 		return $this->model->delete($id_estudiante);
     }
+
+    public function findById($id_estudiante = ''){
+        return $this->model->findById($id_estudiante);
+    }
     
 	public function __destruct() {
 		//unset($this);

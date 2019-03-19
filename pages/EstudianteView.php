@@ -6,7 +6,7 @@ echo "<h1>Mantenimiento a Estudiantes</h1>";
 $estudianteModel = new EstudianteController();
 
 //Llenado del arreglo
-$estudientes= $estudianteModel->read();
+$estudientes= $estudianteModel->findById(1);
 
 echo "
 <table>
