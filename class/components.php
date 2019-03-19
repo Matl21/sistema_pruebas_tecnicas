@@ -1,5 +1,5 @@
 <?php
-class components_class{
+class Components{
     public static function generarRadios($name,$cantidad){
         for ($i=1; $i <=$cantidad ; $i++) { 
             echo "<input type=\"radio\" name=\"$name\" value=\"$i\">$i ";

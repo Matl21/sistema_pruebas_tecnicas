@@ -15,10 +15,10 @@
     include ('class/components.php');
 
     /*--------- Preguntas -----------*/
-    $pregunta1 = '';
-    $pregunta2 = '';
-    $pregunta3 = '';
-    $pregunta4 = '';
+    $pregunta1 = '1.1 Resuelve problemas haciendo uso de algoritmos.';
+    $pregunta2 = '1.2 Aplica algoritmos en lenguaje natural y pseudocódigo.';
+    $pregunta3 = '1.3 Resuelve problemas en estructuras de pseudocódigo.';
+    $pregunta4 = '1.4 ¿Cuáles son las funciones que desempeñan los algoritmos en la resolución de problemas?';
     $pregunta5 = '';
     $pregunta6 = '';
     $pregunta7 = '';
@@ -34,31 +34,31 @@
     ?>
     <form method="post">
         <h4>1. Emplear algoritmos para resolver problemas.</h4>
-        <label>1.1 Resuelve problemas haciendo uso de algoritmos.</label>
         <?php 
-        components_class::generarRadios('respuesta1',5);
+        Components::generarPregunta($pregunta1);
+        Components::generarRadios('respuesta1',5);
         ?>
         <br>
         <br>
 
-        <label>1.2 Aplica algoritmos en lenguaje natural y pseudocódigo.</label>
+        <label></label>
         <?php 
-        components_class::generarRadios('respuesta2',5);
+        Components::generarPregunta($pregunta2);
+        Components::generarRadios('respuesta2',5);
         ?>
         <br>
         <br>
 
-        <label>1.3 Resuelve problemas en estructuras de pseudocódigo.</label>
+        <label></label>
         <?php 
-        components_class::generarRadios('respuesta3',5);
+        Components::generarPregunta($pregunta3);
+        Components::generarRadios('respuesta3',5);
         ?>
         <br>
-        <br>
-        
-        <label>1.4 ¿Cuáles son las funciones que desempeñan los algoritmos en la resolución de problemas?</label>
         <br>
         <?php
-        components_class::generarTextArea('respuesta4');
+        Components::generarPregunta($pregunta4);
+        Components::generarTextArea('respuesta4');
         ?>
         <br>
 
