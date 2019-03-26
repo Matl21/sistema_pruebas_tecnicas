@@ -11,5 +11,7 @@ class Components{
     public static function generarPregunta($text){
         echo "<label>$text</label>";
     }
+
+    
 }
 ?>

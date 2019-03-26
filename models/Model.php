@@ -4,7 +4,7 @@ abstract class Model {
     private static $db_host = 'localhost';
     private static $db_user = 'root';
     private static $db_pass = '';
-    protected $db_name;
+    private static $db_name = 'pruebastecnicas';
     private static $db_charset = 'utf8';
     private $conn;
     protected $query;
@@ -19,7 +19,7 @@ abstract class Model {
 
     //Método privado para conectarse a la base de datos
     private function db_open(){
-        $this->conn = new mysqli(self::$db_host, self::$db_user, self::$db_pass, $this->db_name);
+        $this->conn = new mysqli(self::$db_host, self::$db_user, self::$db_pass, self::$db_name);
         $this->conn->set_charset(self::$db_charset);
     }
 

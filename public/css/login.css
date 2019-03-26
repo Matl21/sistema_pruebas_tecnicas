@@ -1,0 +1,65 @@
+body{
+    background: url("../images/fondos/computer.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+.modal-dialog{
+    margin: 0 auto;
+}
+.main-section{
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    padding: 0;
+}
+.modal-content{
+    background: rgba(53, 60, 70, 0.85);
+    padding: 0 20px;
+    box-shadow: 0 0 3px #848484;
+}
+.user_img{
+    margin-top: -50px;
+    margin-bottom: 15px;
+}
+.user_img img{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 3px #848484;
+    border-radius: 50%;
+}
+.form-group h3{
+    color: white;
+}
+.form-group input{
+    height: 42px;
+    font-size: 16px;
+    border:0px;
+    padding-left: 54px;
+    border-radius: 5px;
+}
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top:4px;
+    color: #848484;
+}
+.form-group#user-group::before{
+    content: "\f007";
+}
+.form-group#password-group::before{
+    content: "\f023";
+}
+button{
+    width: 40%;
+    margin: 5px 0 25px;
+}
+.forgot{
+    padding: 5px 0;
+}
+.forgot a{
+    color: white;
+}
+.clase{
+    background: green;
+}

@@ -7,10 +7,8 @@
     <title>Inicio</title>
     
     <!-- Bootstrap CSS -->
-    <!--
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    --> 
     <!-- FontAwosome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css" integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous">
@@ -30,12 +28,14 @@
             </div>
             <div class="enlaces" id="enlaces">
                 <a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
+                <a href="index.php?contenido=pages/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
                 <a href="index.php?contenido=pages/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
                 <a href="index.php?contenido=pages/prueba_xamarin.php"><i class="fas fa-code" aria-hidden="true"></i>Xamarin</a>
                 <a href="index.php?contenido=pages/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
                 <a href="index.php?contenido=pages/prueba_tester.php"><i class="fas fa-code" aria-hidden="true"></i>Tester</a>
                 <a href="index.php?contenido=pages/prueba_java.php"><i class="fas fa-code" aria-hidden="true"></i>JAVA</a>
                 <a href="index.php?contenido=pages/prueba_php.php"><i class="fas fa-code" aria-hidden="true"></i>PHP</a>
+                <a href="index.php?contenido=pages/login.php"><i class="fas fa-code" aria-hidden="true"></i>Iniciar Session</a>
             </div>
         </nav>
         <div class="div_rojo"></div>
@@ -43,13 +43,21 @@
 
     <main>
         <article>
-            <h1>Ejercicios de PHP</h1>
-            <hr>
             <?php
+            
             if (isset($_GET['contenido'])) {
                 $contenido = $_GET['contenido'];
                 include ($contenido);
             }
+            
+            /*
+            require_once('./controllers/Autoload.php');
+            $autoload = new Autoload();
+
+            $route = isset($_GET['r'])? $_GET['r'] : 'home';
+            $main = new Router($route);
+            */
+
             ?>
         </article>
     </main>
@@ -102,9 +110,9 @@
                 Martinez Ayala</a>
         </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/headroom.min.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="public/js/jquery-3.3.1.min.js"></script>
+    <script src="public/js/headroom.min.js"></script>
+    <script src="public/js/menu.js"></script>
 
 </body>
 </html>

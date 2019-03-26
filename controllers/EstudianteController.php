@@ -1,5 +1,5 @@
 <?php 
-require_once('../models/EstudianteModel.php');
+require_once('./models/EstudianteModel.php');
 class EstudianteController {
     private $model;
     

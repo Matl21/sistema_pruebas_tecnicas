@@ -12,7 +12,7 @@
 <body>
     <?php
     /**--------  Añadir clases --------**/
-    include ('class/components.php');
+    include ('class/Components.php');
 
     /*--------- Preguntas -----------*/
     $pregunta1 = '1.1 Resuelve problemas haciendo uso de algoritmos.';

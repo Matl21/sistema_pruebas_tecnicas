@@ -10,11 +10,6 @@ class EstudianteModel extends Model  {
     public $foto_url;
     public $activo;
     
-    //Metodo constructor de la clase
-	public function __construct() {
-		$this->db_name = 'pruebastecnicas';
-    }
-    
     //Metodo que inserta registros dentro de la base datos
     public function create( $datos = array() ) {
 		foreach ($datos as $key => $value) {
