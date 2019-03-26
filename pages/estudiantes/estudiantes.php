@@ -80,8 +80,18 @@ echo "
 <td>". $estudientes[$i]['fecha_nacimiento'] ."</td>
 <td>". $estudientes[$i]['foto_url'] ."</td>
 <td>". $estudientes[$i]['activo'] ."</td>
-<td> <button type=\"submit\" class=\"btn btn-warning\" name=\"btn_editar\">Editar</button> </td>
+<td> 
+<form method=\"post\">
+<input type=\"hidden\" name=\"r\" value=\"estudiante-editar\">
+<input type=\"hidden\" name=\"id_estudiante\" value='".$estudientes[$i]['id_estudiante']."'>
+<button type=\"submit\" class=\"btn btn-warning\" name=\"btn_editar\">Editar</button> 
+</form>
+</td>
+<form method=\"post\">
+<input type=\"hidden\" name=\"r\" value=\"estudiante-eliminar\">
+<input type=\"hidden\" name=\"id_estudiante\" value='".$estudientes[$i]['id_estudiante']."'>
 <td> <button type=\"submit\" class=\"btn btn-danger\" name=\"btn_eliminar\">Eliminar</button> </td>
+</form>
 </tr>";
 }
 echo "</table>
@@ -98,18 +108,19 @@ if (isset($_POST['btn_agregar'])) {
 }
 
 if (isset($_POST['btn_editar'])) {  
+  echo "Le diste al boton editar<br/>";
+  echo "El valor de id es: ".$_POST['id_estudiante'];
   //Conversion de los datos a arreglo
-  $arreglo= EntityArray::estudianteArray($_POST['id_estudiante'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['sexo'],$_POST['fecha_nacimiento'],null,true);
+  //$arreglo= EntityArray::estudianteArray($_POST['id_estudiante'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['sexo'],$_POST['fecha_nacimiento'],null,true);
   //Editar un registro
   //$estudianteController->update($arreglo);
   //Llenado del arreglo
   $estudientes= $estudianteController->read();
 }
 
-if (isset($_POST['btn_eliminar'])) {  
-  //Conversion de los datos a arreglo
-  echo "Hola soy". $_GET['id_estudiante'] ."el que borraste";
-  //$estudianteController->delete($_POST['id_estudiante']);
+if (isset($_POST['btn_eliminar'])) { 
+  //Borrar registro de la base de datos
+  $estudianteController->delete($_POST['id_estudiante']);
   //Llenado del arreglo
   $estudientes= $estudianteController->read();
 }

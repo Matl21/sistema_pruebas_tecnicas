@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio</title>
-    
+    <title>Pruebas Técnicas</title>
+
+    <!-- Icono del proyecto --->
+    <link rel="shortcut icon" type="image/png" href="public/img/icons/quiz.png">
     <!-- Bootstrap CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,7 +30,7 @@
             </div>
             <div class="enlaces" id="enlaces">
                 <a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
-                <a href="index.php?contenido=pages/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
+                <a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
                 <a href="index.php?contenido=pages/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
                 <a href="index.php?contenido=pages/prueba_xamarin.php"><i class="fas fa-code" aria-hidden="true"></i>Xamarin</a>
                 <a href="index.php?contenido=pages/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
@@ -57,7 +59,7 @@
             $route = isset($_GET['r'])? $_GET['r'] : 'home';
             $main = new Router($route);
             */
-
+            
             ?>
         </article>
     </main>
