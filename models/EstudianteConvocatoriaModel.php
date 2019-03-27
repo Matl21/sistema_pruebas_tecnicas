@@ -1,6 +1,6 @@
 <?php 
 require_once('Model.php');
-class EstudianteConvoactoriaModel extends Model  {
+class EstudianteConvocatoriaModel extends Model  {
     public $id_convocatoria;
     public $id_estudiante;
     public $municipio;
@@ -13,17 +13,21 @@ class EstudianteConvoactoriaModel extends Model  {
     
     //Metodo que inserta registros dentro de la base datos
     public function create( $datos = array() ) {
-		foreach ($datos as $key => $value) {
-            $$key = $value;
-            //echo "key: $key value: $value<br/>";
+        try {
+            foreach ($datos as $key => $value) {
+                $$key = $value;
+            }
+            $this->query = "INSERT INTO  estudiante_convocatoria (id_convocatoria,id_estudiante,municipio,lugar) VALUES ($id_convocatoria, '$id_estudiante', '$municipio', '$lugar');";
+            $this->set_query();
+        } catch (Exception $e) {
+            //Mensaje de error al no poder crear el registro
+            echo "No se pudo crear el registro: ".$e->errorMessage(); 
         }
-		$this->query = "INSERT INTO  EstudianteConvoactoria (id_convocatoria,id_estudiante,municipio,lugar) VALUES ($id_convocatoria, '$id_estudiante', '$municipio', '$lugar');";
-        $this->set_query();
     }
     
     //Metodo que obtine los registros de la base de datos
     public function read(){
-        $this->query = "SELECT * FROM EstudianteConvoactoria";
+        $this->query = "SELECT * FROM estudiante_convocatoria";
         $this->get_query();
 
         $data = array();
@@ -38,7 +42,7 @@ class EstudianteConvoactoriaModel extends Model  {
 		foreach ($datos as $key => $value) {
 			$$key = $value;
 		}
-		$this->query = "UPDATE EstudianteConvoactoria SET id_convocatoria= '$id_convocatoria',id_estudiante = '$id_estudiante',municipio='$municipio',lugar='$lugar' WHERE id_convocatoria = $id_convocatoria;";
+		$this->query = "UPDATE estudiante_convocatoria SET id_convocatoria= '$id_convocatoria',id_estudiante = '$id_estudiante',municipio='$municipio',lugar='$lugar' WHERE id_convocatoria = $id_convocatoria;";
 		$this->set_query();
     }
 
