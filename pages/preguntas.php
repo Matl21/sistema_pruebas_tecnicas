@@ -26,12 +26,8 @@ $preguntas= $preguntasController->read();
 
 <form method="post">
   <div class="form-group">
-    <label for="id_pregunta">Pregunta</label>
-    <input type="number" class="form-control" name="pregunta" id="id_pregunta" placeholder="Pregunta" pattern="[a-zA-Z]{1,64}" required>
-  </div>
-  <div class="form-group">
-    <label for="id_convocatoria">Convocatoria</label>
-    <input type="number" class="form-control" name="convocatoria" id="id_convocatoria" placeholder="Convocatoria" pattern="[a-zA-Z]{1,64}" required>
+    <label for="convocatoria">Convocatoria</label>
+    <input type="number" class="form-control" name="id_convocatoria" id="convocatoria" placeholder="Convocatoria" pattern="[a-zA-Z]{1,64}" required>
   </div>
   <div class="form-group">
     <label for="id_titulo">Titulo</label>
@@ -64,7 +60,7 @@ echo "
 <table class=\"table table-striped\">
 <tr>
     <th>id_pregunta</th>
-    <th>id_convocatoria</th>
+    <th>Convocatoria</th>
     <th>Titulo</th>
     <th>Descripcion</th>
     <th>Etapa</th>
@@ -76,7 +72,7 @@ for ($i=0; $i <count($preguntas) ; $i++) {
 echo "
 <tr>
 <td name='id_pregunta'>". $preguntas[$i]['id_pregunta'] ."</td>
-<td name='id_convocatoria'>". $preguntas[$i]['id_convocatoria'] ."</td>
+<td>". $preguntas[$i]['id_convocatoria'] ."</td>
 <td>". $preguntas[$i]['titulo'] ."</td>
 <td>". $preguntas[$i]['descripcion'] ."</td>
 <td>". $preguntas[$i]['etapa'] ."</td>
@@ -128,10 +124,6 @@ if (isset($_POST['btn_eliminar'])) {
 }
 
 
-
-//$status->create($new_status);
-//$estudianteModel->create($new_status);
-//$estudianteModel->update($new_status);
 ?>
 </body>
 </html>

@@ -26,12 +26,8 @@ $respuestas= $respuestasController->read();
 
 <form method="post">
   <div class="form-group">
-    <label for="id_respuesta">id_respuesta</label>
-    <input type="number" class="form-control" name="id_respuesta" id="id_respuesta" placeholder="id_respuesta" pattern="[a-zA-Z]{1,64}" required>
-  </div>
-  <div class="form-group">
-    <label for="id_pregunta">id_pregunta</label>
-    <input type="number" class="form-control" name="id_pregunta" id="id_pregunta" placeholder="id_pregunta" pattern="[a-zA-Z]{1,64}" required>
+    <label for="pregunta">id_pregunta</label>
+    <input type="number" class="form-control" name="id_pregunta" id="pregunta" placeholder="id_pregunta" pattern="[a-zA-Z]{1,64}" required>
   </div>
   <div class="form-group">
     <label for="id_estudiante">id_estudiante</label>
@@ -73,7 +69,7 @@ echo "
 for ($i=0; $i <count($respuestas) ; $i++) { 
 echo "
 <tr>
-<td name='id_respuestas'>". $respuestas[$i]['id_respuesta'] ."</td>
+<td name='id_respuesta'>". $respuestas[$i]['id_respuesta'] ."</td>
 <td>". $respuestas[$i]['id_pregunta'] ."</td>
 <td>". $respuestas[$i]['id_estudiante'] ."</td>
 <td>". $respuestas[$i]['respuesta'] ."</td>
@@ -100,9 +96,10 @@ echo "</table>
 
 if (isset($_POST['btn_agregar'])) {  
   //Conversion de los datos a arreglo
-  $arreglo= EntityArray::respuestasArray(null,$_POST['id_respuesta'],$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$_POST['descripcion'],$_POST['valoracion']);
+  $arreglo= EntityArray::respuestasArray(null,$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$_POST['descripcion'],$_POST['valoracion']);
   //Insertar un registro
   $respuestasController->create($arreglo);
+  var_dump($arreglo);
   //Llenado del arreglo
   $respuestas= $respuestasController->read();
 }

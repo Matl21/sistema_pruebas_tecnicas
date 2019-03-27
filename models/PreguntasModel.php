@@ -20,7 +20,7 @@ class PreguntasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "INSERT INTO preguntas (id_pregunta,id_convocatoria,titulo,descripcion,etapa,fecha_creacion,activo) VALUES (null, '$id_pregunta', '$id_convocatoria', '$titulo','$descripcion','$etapa', '$fecha_creacion', $activo);";
+            $this->query = "INSERT INTO preguntas (id_pregunta,id_convocatoria,titulo,descripcion,etapa,fecha_creacion,activo) VALUES (null '$id_convocatoria', '$titulo','$descripcion','$etapa', '$fecha_creacion', $activo);";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
