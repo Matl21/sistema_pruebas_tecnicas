@@ -1,6 +1,6 @@
 /**------ Contenido --------**/
 main{
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     min-height: 400px;
     margin: 20px auto;
@@ -17,6 +17,7 @@ main article hr{
     height: 2px;
     background: #4357ad;
     border: none;
+    text-align: center;
 }
 table{
     font-size: 15px;

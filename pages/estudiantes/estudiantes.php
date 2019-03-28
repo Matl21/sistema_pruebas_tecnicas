@@ -24,22 +24,41 @@ $estudianteController = new EstudianteController();
 $estudientes= $estudianteController->read();
 ?>
 
-<form method="post">
-  <div class="form-group">
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarModal">
+  Nuevo Registro
+</button>
+<br/><br/>
+
+<!-- Modal Agregar -->
+<div class="modal fade" id="agregarModal" tabindex="-1" role="dialog" aria-labelledby="Modal de Edicion" aria-hidden="true">
+<form method="post" id="insert_form">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Registro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
     <label for="id_nombre">Nombre</label>
-    <input type="text" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del estudiante" pattern="[a-zA-Z]{1,64}" required>
+    <input type="text" id="agregar_nombre" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del estudiante" pattern="[a-zA-Z]{1,64}" required>
   </div>
   <div class="form-group">
     <label for="id_apellido">Apellido</label>
-    <input type="text" class="form-control" name="apellido" id="id_apellido" placeholder="Apellido del estudiante" pattern="[a-zA-Z]{1,64}" required>
+    <input type="text" id="agregar_apellido" class="form-control" name="apellido" id="id_apellido" placeholder="Apellido del estudiante" pattern="[a-zA-Z]{1,64}" required>
   </div>
   <div class="form-group">
     <label for="id_email">E-mail</label>
-    <input type="email" class="form-control" name="email" id="id_email" placeholder="Correo"  required>
+    <input type="email" id="agregar_email" class="form-control" name="email" id="id_email" placeholder="Correo"  required>
   </div>
   <div class="form-group">
-    <label for="id_sexo">Sexo</label>
-    <select name="sexo" id="id_sexo" required>
+    <label for="sexo">Sexo</label>
+    <select name="sexo" id="agregar_sexo" required>
     <option value="Femenino">Femenino</option>
     <option value="Masculino">Masculino</option>
     <option value="Otro">Otro</option>
@@ -47,17 +66,92 @@ $estudientes= $estudianteController->read();
   </div>
   <div class="form-group">
     <label for="id_fecha_nacimiento">Fecha de Nacimiento</label>
-    <input type="date" class="form-control" name="fecha_nacimiento" id="id_fecha_nacimiento" placeholder="Fcha de nacimiento"  required>
+    <input type="date" id="agregar_fecha_nacimiento" class="form-control" name="fecha_nacimiento" id="id_fecha_nacimiento" placeholder="Fcha de nacimiento"  required>
   </div>
-  <button type="submit" class="btn btn-primary" name="btn_agregar">Agregar</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" name="btn_agregar" class="btn btn-primary" onClick="document.location.reload(true)">Guardar</button>
+      </div>
+    </div>
+  </div>
 </form>
-<br/>
+</div>
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="Modal de eliminacion" aria-hidden="true">
+  <form method="post">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Eliminar registro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <input type="hidden" id="eliminar_id_estudiante" value="">
+      </div>
+      <div class="modal-body">
+        <label>¿Esta seguro que deseas eliminar este registro?</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-danger" name="btn_eliminar">Eliminar</button>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+
+<!-- Modal Editar -->
+<div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="Modal de Edicion" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Registro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <input type="hidden" id="edit_id_estudiante">
+      <div class="form-group">
+    <label for="edit_nombre">Nombre</label>
+    <input type="text" id="edit_nombre" class="form-control" name="nombre" placeholder="Nombre del estudiante" pattern="[a-zA-Z]{1,64}" required>
+  </div>
+  <div class="form-group">
+    <label for="edit_apellido">Apellido</label>
+    <input type="text" id="edit_apellido" class="form-control" name="apellido" placeholder="Apellido del estudiante" pattern="[a-zA-Z]{1,64}" required>
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" id="edit_email" class="form-control" name="email" placeholder="Correo"  required>
+  </div>
+  <div class="form-group">
+    <label for="sexo">Sexo</label>
+    <select name="sexo" id="edit_sexo" required>
+    <option value="Femenino">Femenino</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Otro">Otro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="edit_fecha_nacimiento">Fecha de Nacimiento</label>
+    <input type="date" id="edit_fecha_nacimiento" class="form-control" name="fecha_nacimiento" placeholder="Fcha de nacimiento"  required>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" name="btn_editar" class="btn btn-warning">Guardar</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
 
 <?php
 //Tabla de clase 
 echo "
-<form method='post'>
-<table class=\"table table-striped\">
+<table class=\"table-responsive table-bordered table-striped\">
 <tr>
     <th>id</th>
     <th>Nombre</th>
@@ -67,7 +161,7 @@ echo "
     <th>Fecha Nacimiento</th>
     <th>Foto</th>
     <th>Activo</th>
-    <th colspan='2'>Acciones</th>
+    <th colspan='2' class=\"th_text\">Acciones</th>
 </tr>";
 for ($i=0; $i <count($estudientes) ; $i++) { 
 echo "
@@ -84,19 +178,18 @@ echo "
 <form method=\"post\">
 <input type=\"hidden\" name=\"r\" value=\"estudiante-editar\">
 <input type=\"hidden\" name=\"id_estudiante\" value='".$estudientes[$i]['id_estudiante']."'>
-<button type=\"submit\" class=\"btn btn-warning\" name=\"btn_editar\">Editar</button> 
+<button type=\"button\" class=\"btn btn-warning btn_modal_editar\" name=\"btn_modal-editar\" data-toggle=\"modal\" data-target=\"#editarModal\">Editar</button> 
 </form>
 </td>
+<td> 
 <form method=\"post\">
 <input type=\"hidden\" name=\"r\" value=\"estudiante-eliminar\">
 <input type=\"hidden\" name=\"id_estudiante\" value='".$estudientes[$i]['id_estudiante']."'>
-<td> <button type=\"submit\" class=\"btn btn-danger\" name=\"btn_eliminar\">Eliminar</button> </td>
+<button type=\"button\" class=\"btn btn-danger btn_modal_eliminar\" name=\"btn_modal_eliminar\" data-toggle=\"modal\" data-target=\"#eliminarModal\" >Eliminar</button> </td>
 </form>
 </tr>";
 }
-echo "</table>
-</form>
-";
+echo "</table>";
 
 if (isset($_POST['btn_agregar'])) {  
   //Conversion de los datos a arreglo
@@ -109,7 +202,7 @@ if (isset($_POST['btn_agregar'])) {
 
 if (isset($_POST['btn_editar'])) {  
   echo "Le diste al boton editar<br/>";
-  echo "El valor de id es: ".$_POST['id_estudiante'];
+  echo "El valor de id es: ".$_POST['edit_nombre'];
   //Conversion de los datos a arreglo
   //$arreglo= EntityArray::estudianteArray($_POST['id_estudiante'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['sexo'],$_POST['fecha_nacimiento'],null,true);
   //Editar un registro
@@ -120,16 +213,13 @@ if (isset($_POST['btn_editar'])) {
 
 if (isset($_POST['btn_eliminar'])) { 
   //Borrar registro de la base de datos
-  $estudianteController->delete($_POST['id_estudiante']);
+  echo "El valor de id es: ".$_POST['id_modal_estudiante'];
+  //$estudianteController->delete($_POST['id_estudiante']);
   //Llenado del arreglo
   $estudientes= $estudianteController->read();
 }
 
-
-
-//$status->create($new_status);
-//$estudianteModel->create($new_status);
-//$estudianteModel->update($new_status);
 ?>
+
 </body>
 </html>

@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="public/css/header.css">
     <link rel="stylesheet" href="public/css/footer.css">
     <link rel="stylesheet" href="public/css/content.css">
+    <!-- CSS Examenes-->
+    <link rel="stylesheet" href="public/css/examenes.css">
+    <!-- CSS Mantenimientos del CRUD-->
+    <link rel="stylesheet" href="public/css/mantenimientos.css">
 </head>
 <body>
     <header id="header">
@@ -31,12 +35,12 @@
             <div class="enlaces" id="enlaces">
                 <a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
                 <a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
-                <a href="index.php?contenido=pages/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
-                <a href="index.php?contenido=pages/prueba_xamarin.php"><i class="fas fa-code" aria-hidden="true"></i>Xamarin</a>
-                <a href="index.php?contenido=pages/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
-                <a href="index.php?contenido=pages/prueba_tester.php"><i class="fas fa-code" aria-hidden="true"></i>Tester</a>
-                <a href="index.php?contenido=pages/prueba_java.php"><i class="fas fa-code" aria-hidden="true"></i>JAVA</a>
-                <a href="index.php?contenido=pages/prueba_php.php"><i class="fas fa-code" aria-hidden="true"></i>PHP</a>
+                <a href="index.php?contenido=pages/examenes/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
+                <a href="index.php?contenido=pages/examenes/prueba_xamarin.php"><i class="fas fa-code" aria-hidden="true"></i>Xamarin</a>
+                <a href="index.php?contenido=pages/examenes/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
+                <a href="index.php?contenido=pages/examenes/prueba_tester.php"><i class="fas fa-code" aria-hidden="true"></i>Tester</a>
+                <a href="index.php?contenido=pages/examenes/prueba_java.php"><i class="fas fa-code" aria-hidden="true"></i>JAVA</a>
+                <a href="index.php?contenido=pages/examenes/prueba_php.php"><i class="fas fa-code" aria-hidden="true"></i>PHP</a>
                 <a href="index.php?contenido=pages/login.php"><i class="fas fa-code" aria-hidden="true"></i>Iniciar Session</a>
             </div>
         </nav>
@@ -111,10 +115,13 @@
             <a href='https://www.linkedin.com/in/kevin-mart%C3%ADnez-b908b6161/' class="a_creador">Kevin Vicente
                 Martinez Ayala</a>
         </div>
-
+    
     <script src="public/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="public/js/headroom.min.js"></script>
     <script src="public/js/menu.js"></script>
-
+    <script src="public/js/set-datos.js"></script>
+    
 </body>
 </html>

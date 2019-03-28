@@ -11,7 +11,7 @@
 
 <?php
     if(isset($_POST['btn_form'])){
-        echo "<h2>Salu</h2>";
+        
     }
 ?>
 

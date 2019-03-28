@@ -28,8 +28,8 @@
                         <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" 11 class="btn btn-primary"><i class="fas fa-sign-in-alt "></i> Ingresar</button>
-                        <button type="button" class="btn btn-primary"><i class="fas fa-pencil-alt    "></i> Registrarse</button>
+                        <button type="submit" 11 class="btn btn-primary button_login"><i class="fas fa-sign-in-alt "></i> Ingresar</button>
+                        <button type="button" class="btn btn-primary button_login"><i class="fas fa-pencil-alt    "></i> Registrarse</button>
                     </div>
                 </form>
                 <div class="col-12 forgot">
