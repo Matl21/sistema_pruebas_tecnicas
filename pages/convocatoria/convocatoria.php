@@ -2,6 +2,10 @@
 require_once('./controllers/ConvocatoriaController.php');
 require_once('./class/EntityArray.php');
 
+//Instacia de la clase controlador
+$convocatoriaController = new ConvocatoriaController();
+//Llenado del arreglo
+$convocatoria= $convocatoriaController->read();
 ?>
 
 <!DOCTYPE html>
@@ -13,36 +17,20 @@ require_once('./class/EntityArray.php');
     <title>Document</title>
 </head>
 <body>
-<?php
-echo "<h3>Mantenimiento a Convocatoria</h3>";
-echo "<hr>";
+<h3>Mantenimiento a Convocatoria</h3>
+<hr>
 
-//Instacia de la clase controlador
-$convocatoriaController = new ConvocatoriaController();
-
-//Llenado del arreglo
-$convocatoria= $convocatoriaController->read();
-?>
-
-<form method="post">
-  <div class="form-group">
-    <label for="id_nombre">Nombre</label>
-    <input type="text" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre" pattern="[a-zA-Z]{1,64}" required>
-  </div>
-  <div class="form-group">
-    <label for="id_descripcion">Apellido</label>
-    <input type="text" class="form-control" name="descripcion" id="id_descripcion" placeholder="Descripcion" pattern="[a-zA-Z]{1,64}" required>
-  </div>
- 
-  <button type="submit" class="btn btn-primary" name="btn_agregar">Agregar</button>
-</form>
-<br/>
+<!-- Boton de nuevo registro -->
+<button type="button" class="btn btn-primary" onclick="window.location.href='index.php?contenido=pages/convocatoria/convocatoriaAdd.php'">
+Nuevo Registro
+<i class="fas fa-pen"></i>
+</button>
+<br/><br/>
 
 <?php
 //Tabla de clase 
-echo "
-<form method='post'>
-<table class=\"table table-striped\">
+echo "<div class=\"table-responsive-md\">
+<table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
     <th>id</th>
     <th>Nombre</th>
@@ -56,21 +44,16 @@ echo "
 <td>". $convocatoria[$i]['nombre'] ."</td>
 <td>". $convocatoria[$i]['descripcion'] ."</td>
 <td> 
-<form method=\"post\">
 <input type=\"hidden\" name=\"r\" value=\"convocatoria-editar\">
-<input type=\"hidden\" name=\"id_convocatoria\" value='".$convocatoria[$i]['id_convocatoria']."'>
-<button type=\"submit\" class=\"btn btn-warning\" name=\"btn_editar\">Editar</button> 
-</form>
+<button type=\"button\" class=\"btn btn-warning\" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/convocatoria/convocatoriaUpdate.php&id=".$convocatoria[$i]['id_convocatoria']."'\" ><i class=\"fas fa-edit\"></i></button>
 </td>
-<form method=\"post\">
+<td> 
 <input type=\"hidden\" name=\"r\" value=\"convocatoria-eliminar\">
-<input type=\"hidden\" name=\"id_convocatoria\" value='".$convocatoria[$i]['id_convocatoria']."'>
-<td> <button type=\"submit\" class=\"btn btn-danger\" name=\"btn_eliminar\">Eliminar</button> </td>
-</form>
+<a class=\"btn btn-danger\" name=\"btn_tb_eliminar\" onclick=\"javascript:return confirm('¿Seguro de eliminar este registro?');\" href='index.php?contenido=pages/convocatoria/convocatoriaDelete.php&id=".$convocatoria[$i]['id_convocatoria']."' ><i class=\"fas fa-trash-alt\"></i></button> </a>
+</td> 
 </tr>";
 }
 echo "</table>
-</form>
 ";
 
 if (isset($_POST['btn_agregar'])) {  
@@ -94,18 +77,6 @@ if (isset($_POST['btn_editar'])) {
   $convocatoria= $convocatoriaController->read();
 }
 
-if (isset($_POST['btn_eliminar'])) { 
-  //Borrar registro de la base de datos
-  $convocatoriaController->delete($_POST['id_convocatoria']);
-  //Llenado del arreglo
-  $convocatoria= $convocatoriaController->read();
-}
-
-
-
-//$status->create($new_status);
-//$estudianteModel->create($new_status);
-//$estudianteModel->update($new_status);
 ?>
 </body>
 </html>
