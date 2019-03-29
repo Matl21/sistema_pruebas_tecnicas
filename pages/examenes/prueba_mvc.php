@@ -12,7 +12,7 @@ include ('class/Components.php');
 </head>
 <body>
 <form method="post">
-<h3>Prueba Técnica de HTML</h3>
+<h3>Prueba Técnica de MVC</h3>
 <hr>
 
 <table class="table-responsive table-bordered table-striped">

@@ -66,5 +66,15 @@ class EntityArray{
         );
         return $datos;
     }
+
+    public static function usuariosArray($id_usuario,$id_rol,$username,$password){
+        $datos = array(
+            'id_usuario' => $id_usuario,
+            'id_rol' => $id_rol,
+            'username' => $username,
+            'password' => $password
+        );
+        return $datos;
+    }
 }
 ?>

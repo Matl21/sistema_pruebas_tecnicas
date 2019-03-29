@@ -12,7 +12,7 @@ include ('class/Components.php');
 </head>
 <body>
 <form method="post">
-<h3>Prueba Técnica de HTML</h3>
+<h3>Prueba Técnica de PHP</h3>
 <hr>
 
 <table class="table-responsive table-bordered table-striped">
@@ -23,7 +23,7 @@ include ('class/Components.php');
 </tr>
 <tr>
 <td >
-<label>1.1 Resuelve problemas haciendo uso de algoritmos..</label>
+<label>1.1 Resuelve problemas haciendo uso de algoritmos.</label>
 </td>
 <td>
 <?php Components::generarRadios('respuesta1',5); ?>
