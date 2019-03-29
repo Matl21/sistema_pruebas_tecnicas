@@ -1,7 +1,11 @@
 <?php
 require_once('./controllers/RolController.php');
 require_once('./class/EntityArray.php');
+//Instacia de la clase controlador
+$rolController = new RolController();
 
+//Llenado del arreglo
+$rol= $rolController->read();
 ?>
 
 <!DOCTYPE html>
@@ -13,40 +17,25 @@ require_once('./class/EntityArray.php');
     <title>Document</title>
 </head>
 <body>
-<?php
-echo "<h3>Mantenimiento a Rol</h3>";
-echo "<hr>";
 
-//Instacia de la clase controlador
-$rolController = new RolController();
+<h3>Mantenimiento a Rol</h3>
+<hr>
 
-//Llenado del arreglo
-$rol= $rolController->read();
-?>
-
-<form method="post">
-  <div class="form-group">
-    <label for="id_nombre">Nombre</label>
-    <input type="text" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del rol" pattern="[a-zA-Z]{1,64}" required>
-  </div>
-  <div class="form-group">
-    <label for="id_descripcion">Descripcion</label>
-    <input type="text" class="form-control" name="descripcion" id="id_descripcion" placeholder="descripcion del rol" required>
-  </div>
-  
-  <button type="submit" class="btn btn-primary" name="btn_agregar">Agregar</button>
-</form>
-<br/>
+<!-- Boton de nuevo registro -->
+<button type="button" class="btn btn-primary" onclick="window.location.href='index.php?contenido=pages/rol/rolAdd.php'">
+Nuevo Registro
+<i class="fas fa-pen"></i>
+</button>
+<br/><br/>
 
 <?php
 //Tabla de clase 
-echo "
-<form method='post'>
-<table class=\"table table-striped\">
+echo "<div class=\"table-responsive-md\">
+<table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
     <th>id</th>
     <th>Nombre</th>
-    <th>descripcion</th>
+    <th>Descripción</th>
     
     <th colspan='2'>Acciones</th>
 </tr>";
@@ -58,21 +47,16 @@ echo "
 <td>". $rol[$i]['descripcion'] ."</td>
 
 <td> 
-<form method=\"post\">
 <input type=\"hidden\" name=\"r\" value=\"rol-editar\">
-<input type=\"hidden\" name=\"id_rol\" value='".$rol[$i]['id_rol']."'>
-<button type=\"submit\" class=\"btn btn-warning\" name=\"btn_editar\">Editar</button> 
-</form>
+<button type=\"button\" class=\"btn btn-warning\" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/rol/rolUpdate.php&id=".$rol[$i]['id_rol']."'\" ><i class=\"fas fa-edit\"></i></button>
 </td>
-<form method=\"post\">
+<td> 
 <input type=\"hidden\" name=\"r\" value=\"rol-eliminar\">
-<input type=\"hidden\" name=\"id_rol\" value='".$rol[$i]['id_rol']."'>
-<td> <button type=\"submit\" class=\"btn btn-danger\" name=\"btn_eliminar\">Eliminar</button> </td>
-</form>
+<a class=\"btn btn-danger\" name=\"btn_tb_eliminar\" onclick=\"javascript:return confirm('¿Seguro de eliminar este registro?');\" href='index.php?contenido=pages/rol/rolDelete.php&id=".$rol[$i]['id_rol']."' ><i class=\"fas fa-trash-alt\"></i></button> </a>
+</td> 
 </tr>";
 }
 echo "</table>
-</form>
 ";
 
 if (isset($_POST['btn_agregar'])) {  
@@ -80,8 +64,6 @@ if (isset($_POST['btn_agregar'])) {
   $arreglo= EntityArray::rolArray(null,$_POST['nombre'],$_POST['descripcion'],null,true);
   //Insertar un registro
   $rolController->create($arreglo);
-  //Llenado del arreglo
-  $rol= $rolController->read();
 }
 
 if (isset($_POST['btn_editar'])) {  

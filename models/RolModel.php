@@ -49,7 +49,7 @@ class RolModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE rol SET nombre= '$nombre',descripcion = '$descripcion', WHERE id_rol = $id_rol;";
+            $this->query = "UPDATE rol SET nombre= '$nombre',descripcion = '$descripcion' WHERE id_rol = $id_rol;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro

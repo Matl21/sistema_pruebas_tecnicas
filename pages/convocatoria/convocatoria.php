@@ -56,26 +56,6 @@ echo "
 echo "</table>
 ";
 
-if (isset($_POST['btn_agregar'])) {  
-   
-  //Conversion de los datos a arreglo
-  $arreglo= EntityArray::convocatoriaArray(null,$_POST['nombre'],$_POST['descripcion']);
-  //Insertar un registro
-  $convocatoriaController->create($arreglo);
-  //Llenado del arreglo
-  $convocatoria= $convocatoriaController->read();
-}
-
-if (isset($_POST['btn_editar'])) {  
-  echo "Le diste al boton editar<br/>";
-  echo "El valor de id es: ".$_POST['id_convocatoria'];
-  //Conversion de los datos a arreglo
-  //$arreglo= EntityArray::estudianteArray($_POST['id_estudiante'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['sexo'],$_POST['fecha_nacimiento'],null,true);
-  //Editar un registro
-  //$estudianteController->update($arreglo);
-  //Llenado del arreglo
-  $convocatoria= $convocatoriaController->read();
-}
 
 ?>
 </body>

@@ -19,6 +19,10 @@ if (isset($_POST['btn_agregar'])) {
   header('Location: index.php?contenido=pages/estudiantes/estudiantes.php');
 }
 
+if (isset($_POST['btn_regresar'])) {
+  header('Location: index.php?contenido=pages/estudiantes/estudiantes.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +37,11 @@ if (isset($_POST['btn_agregar'])) {
 <form method="post">
   <div class="form-group">
     <label for="id_nombre">Nombre</label>
-    <input type="text" id="nombre" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del estudiante" pattern="[a-zA-Z]{1,64}" required>
+    <input type="text" id="nombre" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del estudiante" required>
   </div>
   <div class="form-group">
     <label for="id_apellido">Apellido</label>
-    <input type="text" id="apellido" class="form-control" name="apellido" id="id_apellido" placeholder="Apellido del estudiante" pattern="[a-zA-Z]{1,64}" required>
+    <input type="text" id="apellido" class="form-control" name="apellido" id="id_apellido" placeholder="Apellido del estudiante" required>
   </div>
   <div class="form-group">
     <label for="id_email">E-mail</label>
@@ -56,7 +60,7 @@ if (isset($_POST['btn_agregar'])) {
     <input type="date" id="fecha_nacimiento" class="form-control" name="fecha_nacimiento" id="id_fecha_nacimiento" placeholder="Fcha de nacimiento"  required>
   </div>
   <div class="form-group">
-  <button type="submit" name="btn_editar" class="btn btn-primary"  >Guardar <i class="far fa-save"></i></button>
+  <button type="submit" name="btn_agregar" class="btn btn-primary"  >Guardar <i class="far fa-save"></i></button>
   <button type="button" name="btn_regresar" class="btn btn-danger" onclick="window.location.href='index.php?contenido=pages/estudiantes/estudiantes.php'" >Regresar <i class="fas fa-share-square"></i></button>
   </div>
   </form>

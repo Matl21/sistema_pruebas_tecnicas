@@ -13,7 +13,6 @@ $convocatoria= $convocatoriaController->findById($id);
 if (isset($_POST['btn_editar'])) {  
     //Conversion de los datos a arreglo
     $arreglo= EntityArray::convocatoriaArray($id,$_POST['nombre'],$_POST['descripcion']);
-    var_dump($arreglo);
     //Insertar un registro
     $convocatoriaController->update($arreglo);
     //Mensaje de registro editado
@@ -55,7 +54,6 @@ if (isset($_POST['btn_regresar'])) {
   <button type="button" name="btn_regresar" class="btn btn-danger" onclick="window.location.href='index.php?contenido=pages/convocatoria/convocatoria.php'" >Regresar <i class="fas fa-share-square"></i></button>
   </div>
 </form>
-
 
 </body>
 </html>
