@@ -51,7 +51,7 @@ class PreguntasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE preguntas SET id_pregunta= '$id_pregunta',id_convocatoria = '$id_convocatoria',titulo='$titulo',descripcion='$descripcion',etapa='$etapa',fecha_creacion='$fecha_creacion',activo=$activo WHERE id_preguntas = $id_preguntas;";
+            $this->query = "UPDATE preguntas SET id_convocatoria = '$id_convocatoria',titulo='$titulo',descripcion='$descripcion',etapa='$etapa',fecha_creacion='$fecha_creacion',activo=$activo WHERE id_pregunta = $id_pregunta;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -60,7 +60,7 @@ class PreguntasModel extends Model  {
     }
 
     //Metodo que se encarga de eliminar un registro de la base de datos
-	public function delete( $id_preguntas = '' ) {
+	public function delete( $id_pregunta = '' ) {
         try {
             $this->query = "DELETE FROM preguntas WHERE id_pregunta = $id_pregunta";
 		    $this->set_query();

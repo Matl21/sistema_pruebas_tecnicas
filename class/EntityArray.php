@@ -61,7 +61,7 @@ class EntityArray{
             'descripcion' => $descripcion,
             'etapa' => $etapa,
             'fecha_creacion' => $fecha_creacion,
-            'activo' => $activo,
+            'activo' => $activo
         );
         return $datos;
     }
