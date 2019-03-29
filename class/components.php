@@ -13,6 +13,17 @@ class Components{
     public static function generarPregunta($text){
         echo "<label>$text</label>";
     }
+
+    public static function messageAgregar(){
+        echo "<div class=\"alert alert-success\" role=\"alert\">
+        Registro creado con exito!
+        </div>";
+    }
+    public static function messageEdit(){
+        echo "<div class=\"alert alert-warning\" role=\"alert\">
+        El Registro ha sido modificado!
+        </div>";
+    }
     
     
 }

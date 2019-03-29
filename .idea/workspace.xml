@@ -7,7 +7,16 @@
       <change beforePath="$PROJECT_DIR$/models/PreguntasModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/PreguntasModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/estudiantes.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/estudiantes/estudiantes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/estudiantes/estudiantes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/estudiantes/estudiantesAdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/estudiantes/estudiantesAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_java.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_mvc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_php.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_tester.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/prueba_xamarin.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/menu.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="430">
-              <caret line="127" column="42" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+              <caret line="127" column="7" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -30,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/estudiantes/estudiantes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="154" column="46" lean-forward="true" selection-start-line="154" selection-start-column="46" selection-end-line="154" selection-end-column="46" />
+            <state relative-caret-position="719">
+              <caret line="218" column="46" selection-start-line="218" selection-start-column="46" selection-end-line="218" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -53,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-5" />
     <option name="y" value="95" />
     <option name="width" value="1346" />
@@ -141,8 +150,7 @@
     <option name="totallyTimeSpent" value="14894000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -178,15 +186,15 @@
     <entry file="file://$PROJECT_DIR$/class/EstudianteModel.php" />
     <entry file="file://$PROJECT_DIR$/pages/estudiantes/estudiantes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="154" column="46" lean-forward="true" selection-start-line="154" selection-start-column="46" selection-end-line="154" selection-end-column="46" />
+        <state relative-caret-position="719">
+          <caret line="218" column="46" selection-start-line="218" selection-start-column="46" selection-end-line="218" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
-          <caret line="127" column="42" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+          <caret line="127" column="7" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="7" />
         </state>
       </provider>
     </entry>
