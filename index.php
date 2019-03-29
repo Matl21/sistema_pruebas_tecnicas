@@ -36,10 +36,9 @@
             <div class="enlaces" id="enlaces">
                 <a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
                 <a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
-                <a href="index.php?contenido=pages/examenes/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
-                <a href="index.php?contenido=pages/examenes/prueba_xamarin.php"><i class="fas fa-code" aria-hidden="true"></i>Xamarin</a>
+                <a href="index.php?contenido=pages/convocatoria/convocatoria.php"><i class="fas fa-code" aria-hidden="true"></i>Convocatoria</a>
+                <a href="index.php?contenido=pages/preguntas/preguntas.php"><i class="fas fa-code" aria-hidden="true"></i>Preguntas</a>
                 <a href="index.php?contenido=pages/examenes/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
-                <a href="index.php?contenido=pages/examenes/prueba_tester.php"><i class="fas fa-code" aria-hidden="true"></i>Tester</a>
                 <a href="index.php?contenido=pages/examenes/prueba_java.php"><i class="fas fa-code" aria-hidden="true"></i>JAVA</a>
                 <a href="index.php?contenido=pages/examenes/prueba_php.php"><i class="fas fa-code" aria-hidden="true"></i>PHP</a>
                 <a href="index.php?contenido=pages/login.php"><i class="fas fa-code" aria-hidden="true"></i>Iniciar Session</a>

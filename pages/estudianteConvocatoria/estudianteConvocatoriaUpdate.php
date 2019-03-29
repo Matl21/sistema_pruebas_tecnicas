@@ -17,13 +17,14 @@ $estudiantes = $estudianteController->read();
 $estudianteConvocatoria = array();
 if (isset($_GET['id'])) {
 $id = $_GET['id'];
-$estudianteConvocatoria= $convocatoriaController->findById($id);
+$estudianteConvocatoria= $estudianteConvocatoriaController->findById($id);
 
 if (isset($_POST['btn_editar'])) {  
     //Conversion de los datos a arreglo
     $arreglo= EntityArray::estudianteconvocatoriaArray($id,$_POST['id_convocatoria'],$_POST['id_estudiante'],$_POST['municipio'],$_POST['lugar']);
     //Insertar un registro
-    $convocatoriaController->update($arreglo);
+    var_dump($arreglo);
+    $estudianteConvocatoriaController->update($arreglo);
     //Mensaje de registro editado
     Components::messageEdit();
     //Redireccionar al mantenimiento
@@ -73,14 +74,14 @@ if (isset($_POST['btn_regresar'])) {
 </div>
   <div class="form-group">
     <label for="id_municipio">Municipio</label>
-    <input type="text" class="form-control" name="municipio" id="id_municipio" placeholder="municipio"  required>
+    <input type="text" class="form-control" name="municipio" value="<?php echo $estudianteConvocatoria[0]['municipio'] ?>" id="id_municipio" placeholder="municipio"  required>
   </div>
   <div class="form-group">
     <label for="id_lugar">Lugar</label>
-    <input type="text" class="form-control" name="lugar" id="id_lugar" placeholder="lugar"  required>
+    <input type="text" class="form-control" name="lugar" id="id_lugar" value="<?php echo $estudianteConvocatoria[0]['lugar'] ?>" placeholder="lugar"  required>
   </div>
   <div class="form-group">
-    <button type="submit" name="btn_agregar" class="btn btn-primary"  >Guardar <i class="far fa-save"></i></button>
+    <button type="submit" name="btn_editar" class="btn btn-primary"  >Guardar <i class="far fa-save"></i></button>
   <button type="button" name="btn_regresar" class="btn btn-danger" onclick="window.location.href='index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php'" >Regresar <i class="fas fa-share-square"></i></button>
   </div>
   </form>

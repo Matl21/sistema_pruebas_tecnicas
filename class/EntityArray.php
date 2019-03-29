@@ -34,8 +34,9 @@ class EntityArray{
         return $datos;
     }
 
-    public static function estudianteConvocatoriaArray($id_estudianteconvocatoria,$id_convocatoria,$id_estudiante,$municipio,$lugar){
+    public static function estudianteConvocatoriaArray($id_estudiante_convocatoria,$id_convocatoria,$id_estudiante,$municipio,$lugar){
         $datos = array(
+            'id_estudiante_convocatoria' => $id_estudiante_convocatoria,
             'id_convocatoria' => $id_convocatoria,
             'id_estudiante' => $id_estudiante,
             'municipio' => $municipio,
