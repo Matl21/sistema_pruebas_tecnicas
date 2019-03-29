@@ -64,32 +64,9 @@ echo "
 </tr>";
 }
 echo "</table>
+</div>
 ";
 
-if (isset($_POST['btn_agregar'])) {  
-  //Conversion de los datos a arreglo
-  $arreglo= EntityArray::preguntasArray(null,$_POST['id_convocatoria'],$_POST['titulo'],$_POST['descripcion'],$_POST['etapa'],$_POST['fecha_creacion'],$_POST['activo']);
-  //Insertar un registro
-  $preguntasController->create($arreglo);
-}
-
-if (isset($_POST['btn_editar'])) {  
-  echo "Le diste al boton editar<br/>";
-  echo "El valor de id es: ".$_POST['id_pregunta'];
-  //Conversion de los datos a arreglo
-  //$arreglo= EntityArray::estudianteArray($_POST['id_estudiante'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['sexo'],$_POST['fecha_nacimiento'],null,true);
-  //Editar un registro
-  //$estudianteController->update($arreglo);
-  //Llenado del arreglo
-  $preguntas= $preguntasController->read();
-}
-
-if (isset($_POST['btn_eliminar'])) { 
-  //Borrar registro de la base de datos
-  $preguntasController->delete($_POST['id_pregunta']);
-  //Llenado del arreglo
-  $preguntas= $preguntasController->read();
-}
 
 
 ?>

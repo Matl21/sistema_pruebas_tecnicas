@@ -48,6 +48,7 @@ foreign key (id_estudiante) references estudiante(id_estudiante)
 );
 
 create table estudiante_convocatoria(
+id_estudiante_convocatoria int primary key auto_increment not null,
 id_convocatoria int not null,
 id_estudiante int not null,
 municipio varchar(64) not null,

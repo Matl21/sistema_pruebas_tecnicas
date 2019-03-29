@@ -19,12 +19,12 @@ class EstudianteConvocatoriaController {
 		return $this->model->update($datos);
     }
     
-	public function delete( $id_estudianteconvocatoria = '' ) {
-		return $this->model->delete($id_estudianteconvocatoria);
+	public function delete( $id_estudiante_convocatoria = '' ) {
+		return $this->model->delete($id_estudiante_convocatoria);
     }
 
-    public function findById($id_estudianteconvocatoria = ''){
-        return $this->model->findById($id_estudianteconvocatoria);
+    public function findById($id_estudiante_convocatoria = ''){
+        return $this->model->findById($id_estudiante_convocatoria);
     }
     
 	public function __destruct() {

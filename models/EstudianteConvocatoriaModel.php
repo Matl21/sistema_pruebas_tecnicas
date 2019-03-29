@@ -1,6 +1,7 @@
 <?php 
 require_once('Model.php');
 class EstudianteConvocatoriaModel extends Model  {
+    public $id_estudiante_convocatoria;
     public $id_convocatoria;
     public $id_estudiante;
     public $municipio;
@@ -17,7 +18,7 @@ class EstudianteConvocatoriaModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "INSERT INTO  estudiante_convocatoria (id_convocatoria,id_estudiante,municipio,lugar) VALUES ($id_convocatoria, '$id_estudiante', '$municipio', '$lugar');";
+            $this->query = "INSERT INTO  estudiante_convocatoria (id_estudiante_convocatoria,id_convocatoria,id_estudiante,municipio,lugar) VALUES (null,$id_convocatoria, '$id_estudiante', '$municipio', '$lugar');";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
@@ -42,19 +43,19 @@ class EstudianteConvocatoriaModel extends Model  {
 		foreach ($datos as $key => $value) {
 			$$key = $value;
 		}
-		$this->query = "UPDATE estudiante_convocatoria SET id_convocatoria= '$id_convocatoria',id_estudiante = '$id_estudiante',municipio='$municipio',lugar='$lugar' WHERE id_convocatoria = $id_convocatoria;";
+		$this->query = "UPDATE estudiante_convocatoria SET id_convocatoria= '$id_convocatoria',id_estudiante = '$id_estudiante',municipio='$municipio',lugar='$lugar' WHERE id_estudiante_convocatoria = $id_estudiante_convocatoria;";
 		$this->set_query();
     }
 
     //Metodo que se encarga de eliminar un registro de la base de datos
-	public function delete( $id_estudiante = '' ) {
-		$this->query = "DELETE FROM estudiante WHERE id_estudiante = $id_estudiante";
+	public function delete( $id_estudiante_convocatoria = '' ) {
+		$this->query = "DELETE FROM estudiante_convocatoria WHERE id_estudiante_convocatoria = $id_estudiante_convocatoria;";
 		$this->set_query();
     }
 
     //Metodo que se encarga de obtener el registro en base al ID
-    public function findById($id_estudiante = ''){
-        $this->query = "SELECT * FROM estudiante WHERE id_estudiante = $id_estudiante;";
+    public function findById($id_estudiante_convocatoria = ''){
+        $this->query = "SELECT * FROM estudiante_convocatoria WHERE id_estudiante_convocatoria = $id_estudiante_convocatoria;";
         $this->get_query();
 
         $data = array();

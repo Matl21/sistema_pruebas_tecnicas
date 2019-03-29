@@ -54,6 +54,7 @@ echo "
 </tr>";
 }
 echo "</table>
+</div>
 ";
 
 
