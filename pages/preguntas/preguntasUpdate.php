@@ -49,7 +49,7 @@ if (isset($_POST['btn_regresar'])) {
   <div class="form-group">
     <label for="convocatoria">Convocatoria</label>
     <select name="id_convocatoria" id="id_convocatoria" class="form-control" required>
-        <option value="<?php echo $preguntas[0]['id_convocatoria'] ?>"><?php echo $convocatoria[$preguntas[0]['id_convocatoria']]['nombre'] ?></option>
+        <option value="<?php echo $preguntas[0]['id_convocatoria'] ?>"><?php echo $convocatoria[$preguntas[0]['id_convocatoria']-1]['nombre'] ?></option>
         <?php 
         for ($i=0; $i <count($convocatoria) ; $i++) { 
             echo "<option value=\"". $convocatoria[$i]['id_convocatoria'] ."\">". $convocatoria[$i]['nombre'] ."</option>";

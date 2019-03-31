@@ -32,7 +32,7 @@ titulo varchar(250) not null,
 descripcion text,
 etapa int not null,
 fecha_creacion date not null,
-activo boolean,
+activo boolean not null,
 foreign key (id_convocatoria) references convocatoria(id_convocatoria)
 );
 
@@ -40,8 +40,9 @@ create table respuestas(
 id_respuesta int primary key auto_increment not null,
 id_pregunta int not null,
 id_estudiante int not null,
-respuesta varchar(250) not null,
-descripcion text not null,
+respuesta text not null,
+fecha date not null,
+abierta boolean not null,
 valoracion int,
 foreign key (id_pregunta) references preguntas(id_pregunta),
 foreign key (id_estudiante) references estudiante(id_estudiante)

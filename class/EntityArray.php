@@ -22,13 +22,14 @@ class EntityArray{
         );
         return $datos;
     }
-    public static function respuestasArray($id_respuesta,$id_pregunta,$id_estudiante,$respuesta,$descripcion,$valoracion){
+    public static function respuestasArray($id_respuesta,$id_pregunta,$id_estudiante,$respuesta,$fecha,$abierta,$valoracion){
         $datos = array(
             'id_respuesta' => $id_respuesta,
             'id_pregunta' => $id_pregunta,
             'id_estudiante' => $id_estudiante,
             'respuesta' => $respuesta,
-            'descripcion' => $descripcion,
+            'fecha' => $fecha,
+            'abierta' => $abierta,
             'valoracion' => $valoracion
         );
         return $datos;

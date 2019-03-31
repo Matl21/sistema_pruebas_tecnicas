@@ -5,7 +5,8 @@ class RespuestasModel extends Model  {
     public $id_pregunta;
     public $id_estudiante;
     public $respuesta;
-    public $descripcion;
+    public $fecha;
+    public $abierta;
     public $valoracion;
    
     //Metodo constructor de la clase
@@ -19,7 +20,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "INSERT INTO respuestas (id_respuesta,id_pregunta,id_estudiante,respuesta,descripcion,valoracion) VALUES (null, '$id_pregunta', '$id_estudiante', '$respuesta','$descripcion','$valoracion');";
+            $this->query = "INSERT INTO respuestas (id_respuesta,id_pregunta,id_estudiante,respuesta,fecha,abierta,valoracion) VALUES (null, '$id_pregunta', '$id_estudiante', '$respuesta','$fecha','$abierta','$valoracion');";
             $this->set_query();
         }  catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
@@ -50,7 +51,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',descripcion='$descripcion',valoracion='$valoracion' WHERE id_respuesta = $id_estudiante;";
+            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion' WHERE id_respuesta = $id_respuesta;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -59,7 +60,7 @@ class RespuestasModel extends Model  {
     }
 
     //Metodo que se encarga de eliminar un registro de la base de datos
-	public function delete( $id_respuestas = '' ) {
+	public function delete( $id_respuesta = '' ) {
         try {
             $this->query = "DELETE FROM respuestas WHERE id_respuesta = $id_respuesta";
 		    $this->set_query();
@@ -70,7 +71,7 @@ class RespuestasModel extends Model  {
     }
 
     //Metodo que se encarga de obtener el registro en base al ID
-    public function findById($id_respuestas = ''){
+    public function findById($id_respuesta = ''){
         $data = array();
         try {
             $this->query = "SELECT * FROM respuestas WHERE id_respuesta = $id_respuesta;";
