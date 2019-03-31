@@ -34,17 +34,31 @@
                 <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
             </div>
             <div class="enlaces" id="enlaces">
-                <a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
-                <a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i>Estudiantes</a>
-                <a href="index.php?contenido=pages/convocatoria/convocatoria.php"><i class="fas fa-code" aria-hidden="true"></i>Convocatoria</a>
-                <a href="index.php?contenido=pages/rol/rol.php"><i class="fas fa-code" aria-hidden="true"></i>Rol</a>
-                <a href="index.php?contenido=pages/preguntas/preguntas.php"><i class="fas fa-code" aria-hidden="true"></i>Preguntas</a>
-                <a href="index.php?contenido=pages/examenes/prueba_html.php"><i class="fas fa-code" aria-hidden="true"></i>HTML</a>
-                <a href="index.php?contenido=pages/examenes/prueba_java.php"><i class="fas fa-code" aria-hidden="true"></i>JAVA</a>
-                <a href="index.php?contenido=pages/examenes/prueba_php.php"><i class="fas fa-code" aria-hidden="true"></i>PHP</a>
-                <a href="index.php?contenido=pages/examenes/prueba_mvc.php"><i class="fas fa-code" aria-hidden="true"></i>MVC</a>
-                <a href="index.php?contenido=pages/examenes/prueba_tester.php"><i class="fas fa-code" aria-hidden="true"></i>Tester</a>
-                <a href="index.php?contenido=pages/login.php"><i class="fas fa-code" aria-hidden="true"></i>Iniciar Session</a>
+                <ul class="ul_enlaces">
+                    <li><a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a></li>
+                    <li><a href=""><i class="fas fa-tools"></i>Mantenimientos</a>
+                        <ul class="submenu">
+                            <li><a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i> Estudiantes</a></li>
+                            <li><a href="index.php?contenido=pages/convocatoria/convocatoria.php"><i class="fas fa-code" aria-hidden="true"></i> Convocatoria</a></li>
+                            <li><a href="index.php?contenido=pages/rol/rol.php"><i class="fas fa-code" aria-hidden="true"></i> Rol</a></li>
+                            <li><a href="index.php?contenido=pages/preguntas/preguntas.php"><i class="fas fa-code"></i> Preguntas</a></li>
+                            <li><a href="index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php"><i class="fas fa-code"></i> Estudiante Convocatoria</a></li>
+                            <li><a href="index.php?contenido=pages/usuarios/usuarios.php"><i class="fas fa-code"></i> Usuarios</a></li>
+                            <li><a href="index.php?contenido=pages/respuestas/respuestas.php"><i class="fas fa-code"></i> Respuestas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><i class="fas fa-pen-alt"></i>Examenes</a>
+                        <ul class="submenu">
+                            <li><a href="index.php?contenido=pages/examenes/prueba_html.php"><i class="far fa-keyboard"></i> HTML</a></li>
+                            <li><a href="index.php?contenido=pages/examenes/prueba_xamarin.php"><i class="far fa-keyboard"></i> XAMARIN</a></li>
+                            <li><a href="index.php?contenido=pages/examenes/prueba_java.php"><i class="far fa-keyboard"></i> JAVA</a></li>
+                            <li><a href="index.php?contenido=pages/examenes/prueba_php.php"><i class="far fa-keyboard"></i> PHP</a></li>
+                            <li><a href="index.php?contenido=pages/examenes/prueba_mvc.php"><i class="far fa-keyboard"></i> MVC</a></li>
+                            <li><a href="index.php?contenido=pages/examenes/prueba_tester.php"><i class="far fa-keyboard"></i> Tester</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.php?contenido=pages/login.php"><i class="far fa-user-circle"></i>Iniciar Session</a></li>
+                </ul>
             </div>
         </nav>
         <div class="div_rojo"></div>

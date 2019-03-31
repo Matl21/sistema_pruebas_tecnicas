@@ -40,9 +40,21 @@ header{
     text-decoration: none;
     font-size: 1em;
 }
-.menu .enlaces{
+/*
+.menu .enlaces a{
+    color:#fff;
+    text-decoration: none;
     display: inline-block;
-    text-align: right;
+    padding: 1em  0.2em 1em 0.2em;
+    text-align: center;
+    font-size: 0.95em;
+}
+.menu .enlaces a{
+    color:#fff;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.95em;
 }
 .menu .enlaces a{
     color:#fff;
@@ -63,6 +75,59 @@ header{
 .menu .enlaces i{
     margin-right: 5px;
 }
+*/
+.menu .enlaces a:hover{
+    transition: 1.5s ease-out;
+    background: #f2f2f2;
+    color: #423;
+}
+.menu .enlaces a:active{
+    background: #cc3333;
+}
+.menu ul{
+    list-style: none;
+}
+.menu .enlaces li:hover{
+    transition: 1.5s ease-out;
+    color: #423;
+}
+.ul_enlaces > li{
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+}
+.ul_enlaces >li >a {
+    color:#fff;
+    text-decoration: none;
+    padding: 1em  0.5em 0.2em 0.5em;
+    display: inline-block;
+}
+.ul_enlaces li a:hover{
+    color:#fff;
+    transition: all 0.3s;
+}
+/*------ submenu -------*/
+.submenu{
+    width: 100%;
+    position: absolute;
+    background: #003875;
+    visibility: hidden;
+    transition: opacity 1.5s;
+    padding: 1em  0.2em 1em 0.2em;
+}
+.submenu li a{
+    display: block;
+    text-decoration: none;
+    padding: 2px;
+    color: #fff;
+    transition: opacity 1.5s;
+}
+.ul_enlaces li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+}
+
 .div_rojo{
     background: #cc3333;
     width: 100%;
