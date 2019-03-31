@@ -19,12 +19,12 @@ class UsuariosController {
 		return $this->model->update($datos);
     }
     
-	public function delete( $id_login = '' ) {
-		return $this->model->delete($id_login);
+	public function delete( $id_usuario = '' ) {
+		return $this->model->delete($id_usuario);
     }
 
-    public function findById($id_login = ''){
-        return $this->model->findById($id_login);
+    public function findById($id_usuario = ''){
+        return $this->model->findById($id_usuario);
     }
     
 	public function __destruct() {

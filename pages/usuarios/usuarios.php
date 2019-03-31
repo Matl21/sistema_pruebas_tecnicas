@@ -21,7 +21,7 @@ $roles = $rolController->read();
     <title>Document</title>
 </head>
 <body>
-<h3>Mantenimiento a Convocatoria</h3>
+<h3>Mantenimiento a Usuarios</h3>
 <hr>
 
 <!-- Boton de nuevo registro -->
@@ -46,7 +46,7 @@ for ($i=0; $i <count($usuarios) ; $i++) {
 echo "
 <tr>
 <td name='id_usuarios'>". $usuarios[$i]['id_usuario'] ."</td>
-<td>". $roles[$usuarios[$i]['id_rol']]['nombre'] ."</td>
+<td>". $roles[$usuarios[$i]['id_rol']-1]['nombre'] ."</td>
 <td>". $usuarios[$i]['username'] ."</td>
 <td>". $usuarios[$i]['password'] ."</td>
 <td> 

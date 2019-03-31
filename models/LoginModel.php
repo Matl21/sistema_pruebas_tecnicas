@@ -9,11 +9,11 @@ class LoginModel extends Model  {
     //Metodo que inserta registros dentro de la base datos
     public function create( $datos = array() ) {
         try {
-            $this->query = "INSERT INTO login (id_usuario,id_rol,username,password) VALUES (null, '$id_rol', '$username', '$password');";
-            $this->set_query();
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
+            $this->query = "INSERT INTO login (id_usuario,id_rol,username,password) VALUES (null, '$id_rol', '$username', MD5('$password'));";
+            $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
             echo "No se pudo crear el registro: ".$e->errorMessage(); 
@@ -43,7 +43,7 @@ class LoginModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE login SET id_rol= '$id_rol',username = '$username',password='$password' WHERE id_login = $id_login;";
+            $this->query = "UPDATE login SET id_rol= '$id_rol',username = '$username',password=MD5('$password') WHERE id_usuario = $id_usuario;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -52,9 +52,9 @@ class LoginModel extends Model  {
     }
 
     //Metodo que se encarga de eliminar un registro de la base de datos
-	public function delete( $id_login = '' ) {
+	public function delete( $id_usuario = '' ) {
         try {
-            $this->query = "DELETE FROM login WHERE id_login = $id_login";
+            $this->query = "DELETE FROM login WHERE id_usuario = $id_usuario";
 		    $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder eliminar el registro
@@ -63,10 +63,10 @@ class LoginModel extends Model  {
     }
 
     //Metodo que se encarga de obtener el registro en base al ID
-    public function findById($id_login = ''){
+    public function findById($id_usuario = ''){
         $data = array();
         try {
-            $this->query = "SELECT * FROM login WHERE id_login = $id_login;";
+            $this->query = "SELECT * FROM login WHERE id_usuario = $id_usuario;";
             $this->get_query();
 
             foreach ($this->rows as $key => $value) {

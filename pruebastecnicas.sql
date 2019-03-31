@@ -176,3 +176,4 @@ insert into preguntas values (null,6,'Ejecuta casos de excepción en archivos de
 insert into preguntas values (null,6,'Utiliza la técnica Debugging para la resolución de un problema.', null,5,'2019-03-18',1);
 insert into preguntas values (null,6,'Elabore un ejemplo utilizando sintaxis para documentar un proceso.', null,5,'2019-03-18',1);
 
+INSERT INTO login (id_usuario,id_rol,username,password) VALUES (null, '2', 'perez', MD5('perezperez'));
