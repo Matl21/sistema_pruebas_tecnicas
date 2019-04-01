@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola soy el HOME</h1>
+    <h3>Menú Principal del Sistema</h3>
+    <hr>
 </body>
 </html>

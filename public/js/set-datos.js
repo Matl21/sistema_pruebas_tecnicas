@@ -15,4 +15,3 @@ $(document).ready(function(){
     $('#edit_fecha_nacimiento').val(data[5]);
   });  
  });
-

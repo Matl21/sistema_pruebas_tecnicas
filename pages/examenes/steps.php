@@ -1,55 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+<style>
+</style>
+
 </head>
 <body>
-<div class="z-depth-1 m-2">
-  <div class="p-4">
-    <ul class="stepper linear">
-      <li class="step active">
-        <div data-step-label="Type something" class="step-title waves-effect waves-dark">Step 1</div>
-        <div class="step-new-content">
-          <div class="row">
-            <div class="md-form col-12 ml-auto">
-              <input id="email-linear" type="email" class="form-control validate" required>
-              <label for="email-linear">Your e-mail</label>
-            </div>
-          </div>
-          <div class="step-actions">
-            <button class="waves-effect waves-dark btn btn-sm btn-primary next-step">CONTINUE</button>
-          </div>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-title waves-effect waves-dark">Step 2</div>
-        <div class="step-new-content">
-          <div class="row">
-            <div class="md-form col-12 ml-auto">
-              <input id="password-linear" type="password" class="form-control validate" required>
-              <label for="password-linear">Your password</label>
-            </div>
-          </div>
-          <div class="step-actions">
-            <button class="waves-effect waves-dark btn btn-sm btn-primary next-step">CONTINUE</button>
-            <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
-          </div>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-title waves-effect waves-dark">Step 3</div>
-        <div class="step-new-content">
-          Finish!
-          <div class="step-actions">
-            <button class="waves-effect waves-dark btn btn-sm btn-primary m-0 mt-4" type="button">SUBMIT</button>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+
+<!-- multistep form -->
+<form id="msform">
+	<!-- progressbar -->
+	<ul id="progressbar">
+		<li class="active">Etapa 1</li>
+		<li>Etapa 2</li>
+		<li>Etapa 3</li>
+		<li>Etapa 4</li>
+	</ul>
+	<!-- fieldsets -->
+	<fieldset>
+		<h2 class="fs-title">Create your account</h2>
+		<h3 class="fs-subtitle">This is step 1</h3>
+		<input type="text" name="email" placeholder="Email" />
+		<input type="password" name="pass" placeholder="Password" />
+		<input type="password" name="cpass" placeholder="Confirm Password" />
+		<input type="button" name="next" class="next action-button" value="Next" />
+	</fieldset>
+	<fieldset>
+		<h2 class="fs-title">Social Profiles</h2>
+		<h3 class="fs-subtitle">Your presence on the social network</h3>
+		<input type="text" name="twitter" placeholder="Twitter" />
+		<input type="text" name="facebook" placeholder="Facebook" />
+		<input type="text" name="gplus" placeholder="Google Plus" />
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="button" name="next" class="next action-button" value="Next" />
+	</fieldset>
+	<fieldset>
+		<h2 class="fs-title">Personal Details</h2>
+		<h3 class="fs-subtitle">We will never sell it</h3>
+		<input type="text" name="fname" placeholder="First Name" />
+		<input type="text" name="lname" placeholder="Last Name" />
+		<input type="text" name="phone" placeholder="Phone" />
+		<textarea name="address" placeholder="Address"></textarea>
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="button" name="next" class="next action-button" value="Next" />
+	</fieldset>
+	<fieldset>
+		<h2 class="fs-title">Personal Details</h2>
+		<h3 class="fs-subtitle">We will never sell it</h3>
+		<input type="text" name="fname" placeholder="First Name" />
+		<input type="text" name="lname" placeholder="Last Name" />
+		<input type="text" name="phone" placeholder="Phone" />
+		<textarea name="address" placeholder="Address"></textarea>
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="submit" name="submit" class="submit action-button" value="Submit" />
+	</fieldset>
+</form>
+
+<!-- jQuery -->
+<script src="public/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- jQuery easing plugin -->
+
+
+<script>
+
+</script>
+
 </body>
 </html>

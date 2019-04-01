@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pruebas Técnicas</title>
-
+    
     <!-- Icono del proyecto --->
     <link rel="shortcut icon" type="image/png" href="public/img/icons/quiz.png">
     <!-- Bootstrap CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- FontAwosome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -23,8 +22,9 @@
     <link rel="stylesheet" href="public/css/examenes.css">
     <!-- CSS Mantenimientos del CRUD-->
     <link rel="stylesheet" href="public/css/mantenimientos.css">
-    <!-- CSS login-->
-    <link rel="stylesheet" href="public/css/login.css">
+
+    <link rel="stylesheet" href="public/css/pruebas.css">
+    
     
 </head>
 <body>
@@ -36,7 +36,7 @@
             </div>
             <div class="enlaces" id="enlaces">
                 <ul class="ul_enlaces">
-                    <li><a href="index.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a></li>
+                    <li><a href="index.php?contenido=pages/home.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a></li>
                     <li><a href=""><i class="fas fa-tools"></i>Mantenimientos</a>
                         <ul class="submenu">
                             <li><a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i> Estudiantes</a></li>
@@ -48,7 +48,7 @@
                             <li><a href="index.php?contenido=pages/respuestas/respuestas.php"><i class="fas fa-code"></i> Respuestas</a></li>
                         </ul>
                     </li>
-                    <li><a href=""><i class="fas fa-pen-alt"></i>Examenes</a>
+                    <li><a href="index.php?contenido=pages/examenes/steps.php"><i class="fas fa-pen-alt"></i>Examenes</a>
                         <ul class="submenu">
                             <li><a href="index.php?contenido=pages/examenes/prueba_html.php"><i class="far fa-keyboard"></i> HTML</a></li>
                             <li><a href="index.php?contenido=pages/examenes/prueba_xamarin.php"><i class="far fa-keyboard"></i> XAMARIN</a></li>
@@ -138,8 +138,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="public/js/headroom.min.js"></script>
+    <script src="public/js/pruebas.js"></script>
     <script src="public/js/menu.js"></script>
     <script src="public/js/set-datos.js"></script>
+<script src="public/js/jquery.easing.min.js" type="text/javascript"></script> 
     
 </body>
 </html>
