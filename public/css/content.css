@@ -22,5 +22,9 @@ main article hr{
 table{
     font-size: 15px;
 }
+.btn_center{
+    text-align: center;
+}
+
 
 /**------ Fin de Contenido --------*/

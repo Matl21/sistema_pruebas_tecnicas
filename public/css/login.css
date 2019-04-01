@@ -44,7 +44,7 @@
     content: "\f007";
 }
 .form-group#password-group::before{
-    content: "\f023";
+    content: "\f13e";
 }
 .button_login{
     width: 40%;

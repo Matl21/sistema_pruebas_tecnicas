@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="modal-dialog text-center">
+    <div class="modal-dialog text-center animated zoomIn">
         <div class="col-sm-10 main-section">
             <div class="modal-content">
                 <div class="col-12 user_img">
