@@ -5,9 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="public/css/home.css" />
 </head>
 <body>
     <h3>Menú Principal del Sistema</h3>
     <hr>
+
+    <div class="container">
+                <ul class="ca-menu">
+                    <li class="exam">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-pen-nib"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Examenes</h2>
+                                <h3 class="ca-sub">Realizar un examen para algun estudiante</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="convocatoria">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-bullhorn"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Convocatoria</h2>
+                                <h3 class="ca-sub">Muestra las convocatoria existentes</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="preguntas">
+                        <a href="#">
+                            <span class="ca-icon" id="heart"><i class="fas fa-question"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Preguntas</h2>
+                                <h3 class="ca-sub">Checkear las preguntas de las convocatorias</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="estudiantes">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-book-open"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Estudiantes</h2>
+                                <h3 class="ca-sub">Muestra las respuestas de los participantes</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="reportes">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-print"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Reportes</h2>
+                                <h3 class="ca-sub">Generar reportes de estudiantes</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="usuarios">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-users"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Usuarios</h2>
+                                <h3 class="ca-sub">Administracion de usuarios</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="respuestas">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-edit"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Respuestas</h2>
+                                <h3 class="ca-sub">Examinar respuestas de estudiantes</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- content -->
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 </body>
 </html>

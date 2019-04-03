@@ -20,7 +20,6 @@ if (isset($_POST['btn_agregar'])) {
 if (isset($_POST['btn_regresar'])) {
     header('Location: index.php?contenido=pages/rol/rol.php');
   }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

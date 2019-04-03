@@ -27,7 +27,6 @@ Nuevo Registro
 <i class="fas fa-pen"></i>
 </button>
 <br/><br/>
-
 <?php
 //Tabla de clase 
 echo "<div class=\"table-responsive-md\">

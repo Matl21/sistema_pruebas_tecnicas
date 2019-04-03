@@ -1,3 +1,6 @@
+<?php
+require_once('./class/Components.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,10 +69,66 @@
             <button class="btn btn-primary btn_center animated fadeInLeft">Siguiente <i
                     class="fas fa-arrow-right"></i></button>
         </div>
+
+
         <div class="tab-pane container" id="menu1">
-            <input type="text">
+<table class="table-responsive table-bordered table-striped">
+<tr>
+<td colspan="2">
+<h4>1.  Diseñar páginas web editando su estructura para personalizar el entorno visual.</h4>
+</td>
+</tr>
+<tr>
+<td >
+<label>1.1	Utilizar la sintaxis básica de etiquetas para dar formato al texto de las páginas web.</label>
+</td>
+<td>
+<?php Components::generarRadios('respuesta1',5); ?>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>1.2	Modificar el color de los párrafos en los documentos HTML.</label>
+</td>
+<td>
+<?php Components::generarRadios('respuesta2',5); ?>
+<br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>1.3	Cambiar el tipo de fuente que utilizan los párrafos.</label>
+</td>
+<td>
+<?php Components::generarRadios('respuesta3',5); ?>
+<br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>1.4	¿En qué parte de la estructura de una página web se coloca la línea de código para personalizar el fondo y cuáles son los parámetros que se utilizan?</label>
+</td>
+<td>
+<?php Components::generarTextArea('respuesta4');?>
+<br>
+</td>
+</tr>
+</table>
         </div>
-        <div class="tab-pane container" id="menu2">...</div>
+        <div class="tab-pane container" id="menu2">
+        
+<table class="table-responsive table-bordered table-striped">
+<tr>
+<td colspan="2">
+
+</table>
+        </div>
+        <div class="tab-pane container" id="menu2">
+        
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
