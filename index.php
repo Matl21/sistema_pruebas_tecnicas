@@ -75,9 +75,12 @@
     <main>
         <article>
             <?php
+            $home = 'pages/home.php';
             if (isset($_GET['contenido'])) {
                 $contenido = $_GET['contenido'];
                 include ($contenido);
+            }else{
+                include($home);
             }
             
             /*
