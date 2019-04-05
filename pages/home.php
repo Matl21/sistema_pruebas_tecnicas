@@ -14,7 +14,7 @@
     <div class="container">
                 <ul class="ca-menu">
                     <li class="exam">
-                        <a href="index.php?contenido=pages/examenes/steps.php">
+                        <a href="index.php?contenido=pages/examenes/seleccion.php">
                             <span class="ca-icon"><i class="fas fa-pen-nib"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Examenes</h2>

@@ -13,6 +13,8 @@ $preguntasController = new PreguntasController();
 $estudiantes = $estudianteController->read();
 $preguntas = $preguntasController->read();
 
+if (isset($_GET['id'])) {
+   
 if (isset($_POST['btn_enviar'])) {
     $fecha= date("Y-m-d");
     $respuestas= array();
@@ -23,7 +25,7 @@ if (isset($_POST['btn_enviar'])) {
     $_POST['respuesta16'],$_POST['respuesta17'],$_POST['respuesta18'],$_POST['respuesta19'],
     $_POST['respuesta20']];
 
-    $id_estudiante=1;
+    $id_estudiante=$_GET['id'];
     $inicio=41;
     $c=0;
     for ($i=0; $i <20 ; $i++) { 
@@ -43,6 +45,7 @@ if (isset($_POST['btn_enviar'])) {
     }
     Components::messageAgregar();
 }
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +62,7 @@ if (isset($_POST['btn_enviar'])) {
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-pills">
         <li class="nav-item ">
-            <a class="nav-link animated heartBeat" data-toggle="tab" href="#indicaciones">Indicaciones</a>
+            <a class="nav-link active animated heartBeat" data-toggle="tab" href="#indicaciones">Indicaciones</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#etapa1">Etapa 1</a>

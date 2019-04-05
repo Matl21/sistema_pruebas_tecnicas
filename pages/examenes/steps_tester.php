@@ -13,6 +13,8 @@ $preguntasController = new PreguntasController();
 $estudiantes = $estudianteController->read();
 $preguntas = $preguntasController->read();
 
+if (isset($_GET['id'])) {
+
 if (isset($_POST['btn_enviar'])) {
     $fecha= date("Y-m-d");
     $respuestas= array();
@@ -23,8 +25,8 @@ if (isset($_POST['btn_enviar'])) {
     $_POST['respuesta16'],$_POST['respuesta17'],$_POST['respuesta18'],$_POST['respuesta19'],
     $_POST['respuesta20']];
 
-    $id_estudiante=1;
-    $inicio=81;
+    $id_estudiante=$_GET['id'];
+    $inicio=61;
     $c=0;
     for ($i=0; $i <20 ; $i++) { 
         $c+=1;
@@ -42,6 +44,7 @@ if (isset($_POST['btn_enviar'])) {
         }
     }
     Components::messageAgregar();
+}
 }
 ?>
 <!DOCTYPE html>
@@ -79,7 +82,7 @@ if (isset($_POST['btn_enviar'])) {
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div class="tab-pane active container" id="home">
+        <div class="tab-pane active container" id="indicaciones">
             <br />
             <h3 class="">Indicaciones para el estudiante:</h3>
             <hr>
