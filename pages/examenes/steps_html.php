@@ -23,24 +23,25 @@ if (isset($_POST['btn_enviar'])) {
     $_POST['respuesta16'],$_POST['respuesta17'],$_POST['respuesta18'],$_POST['respuesta19'],
     $_POST['respuesta20']];
 
+    $id_estudiante=1;
+    $inicio=61;
     $c=0;
     for ($i=0; $i <20 ; $i++) { 
         $c+=1;
         if ($c!=4) {
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+61),1,$respuestas[$i],$fecha,false,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0);
             //Insertar un registro
             $respuestasController->create($arreglo);
         }else{
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+61),1,$respuestas[$i],$fecha,true,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0);
             //Insertar un registro
             $respuestasController->create($arreglo);
             $c=0;
         }
     }
     Components::messageAgregar();
-    
 }
 ?>
 
