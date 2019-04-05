@@ -68,7 +68,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="form-group">
             <label for="id_estudiante">Estudiante*</label>
             <select class="form-control" name="id_estudiante" id="id_estudiante" placeholder="id_estudiante" required>
-            <option value="<?php echo $respuestas[0]['id_estudiante'] ?>"><?php echo $estudiantes[$respuestas[0]['id_pregunta']-1]['nombre']." ".$estudiantes[$respuestas[0]['id_pregunta']-1]['apellido'] ?></option>
+            <option value="<?php echo $respuestas[0]['id_estudiante'] ?>"><?php echo $estudiantes[$respuestas[0]['id_estudiante']-1]['nombre']." ".$estudiantes[$respuestas[0]['id_estudiante']-1]['apellido'] ?></option>
                 <?php
                 for ($i=0; $i <count($estudiantes) ; $i++) { 
                   echo "<option value=\"".$estudiantes[$i]['id_estudiante']."\">".$estudiantes[$i]['nombre']." ".$estudiantes[$i]['apellido']."</option>";
