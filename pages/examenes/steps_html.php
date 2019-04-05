@@ -24,7 +24,7 @@ if (isset($_POST['btn_enviar'])) {
     $_POST['respuesta20']];
 
     $id_estudiante=1;
-    $inicio=61;
+    $inicio=41;
     $c=0;
     for ($i=0; $i <20 ; $i++) { 
         $c+=1;

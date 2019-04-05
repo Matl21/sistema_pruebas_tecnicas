@@ -1,5 +1,48 @@
 <?php
-require_once('./class/components.php')
+require_once('./controllers/RespuestasController.php');
+require_once('./controllers/EstudianteController.php');
+require_once('./controllers/PreguntasController.php');
+require_once('./class/EntityArray.php');
+require_once('./class/Components.php');
+
+//Instacia de la clase controlador
+$respuestasController = new RespuestasController();
+$estudianteController = new EstudianteController();
+$preguntasController = new PreguntasController();
+//Llenado del arreglo
+$estudiantes = $estudianteController->read();
+$preguntas = $preguntasController->read();
+
+if (isset($_POST['btn_enviar'])) {
+    $fecha= date("Y-m-d");
+    $respuestas= array();
+    $respuestas = [$_POST['respuesta1'],$_POST['respuesta2'],$_POST['respuesta3'],
+    $_POST['respuesta4'],$_POST['respuesta5'],$_POST['respuesta6'],$_POST['respuesta7'],
+    $_POST['respuesta8'],$_POST['respuesta9'],$_POST['respuesta10'],$_POST['respuesta11'],
+    $_POST['respuesta12'],$_POST['respuesta13'],$_POST['respuesta14'],$_POST['respuesta15'],
+    $_POST['respuesta16'],$_POST['respuesta17'],$_POST['respuesta18'],$_POST['respuesta19'],
+    $_POST['respuesta20']];
+
+    $id_estudiante=1;
+    $inicio=21;
+    $c=0;
+    for ($i=0; $i <20 ; $i++) { 
+        $c+=1;
+        if ($c!=4) {
+            //Conversion de los datos a arreglo
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0);
+            //Insertar un registro
+            $respuestasController->create($arreglo);
+        }else{
+            //Conversion de los datos a arreglo
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0);
+            //Insertar un registro
+            $respuestasController->create($arreglo);
+            $c=0;
+        }
+    }
+    Components::messageAgregar();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,38 +54,33 @@ require_once('./class/components.php')
 </head>
 
 <body>
+    <form method="post">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-pills">
         <li class="nav-item">
-            <a class="nav-link active animated heartBeat" data-toggle="tab" href="#home">Estudiante</a>
+            <a class="nav-link active animated heartBeat" data-toggle="tab" href="#indicaciones">Indicaciones</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#home">Indicaciones</a>
+            <a class="nav-link" data-toggle="tab" href="#etapa1">Etapa 1</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu1">Etapa 1</a>
+            <a class="nav-link" data-toggle="tab" href="#etapa2">Etapa 2</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu2">Etapa 2</a>
+            <a class="nav-link" data-toggle="tab" href="#etapa3">Etapa 3</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu3">Etapa 3</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu4">Etapa 4</a>
+            <a class="nav-link" data-toggle="tab" href="#etapa4">Etapa 4</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu5">Etapa 5</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#menu2">Finalizar</a>
+            <a class="nav-link" data-toggle="tab" href="#etapa5">Etapa 5</a>
         </li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div class="tab-pane active container" id="home">
+        <div class="tab-pane active container" id="indicaciones">
             <br />
             <h3 class="">Indicaciones para el estudiante:</h3>
             <hr>
@@ -66,11 +104,9 @@ require_once('./class/components.php')
             <button class="btn btn-primary btn_center animated fadeInLeft">Siguiente <i
                     class="fas fa-arrow-right"></i></button>
         </div>
-        <div class="tab-pane container" id="menu1">
+        <div class="tab-pane container" id="etapa1">
             <br />
             <table class="table-responsive table-bordered table-striped">
-
-
                 <tr>
                     <td colspan="2">
                         <h4>1. Elaborar algoritmos y diagramas que ayuden a la formulación de una solución viable
@@ -124,14 +160,9 @@ require_once('./class/components.php')
                     class="fas fa-arrow-right"></i></button>
         </div>
 
-
-
-        <div class="tab-pane container" id="menu2">
+        <div class="tab-pane container" id="etapa2">
             <br />
             <table class="table-responsive table-bordered table-striped">
-
-
-
                 <tr>
                     <td colspan="2">
                         <h4>2. Desarrollar operaciones básicas usando sintaxis C# de manera funcional y ordenada.</h4>
@@ -184,7 +215,7 @@ require_once('./class/components.php')
         </div>
 
 
-        <div class="tab-pane container" id="menu3">
+        <div class="tab-pane container" id="etapa3">
             <br />
             <table class="table-responsive table-bordered table-striped">
 
@@ -239,9 +270,7 @@ require_once('./class/components.php')
                     class="fas fa-arrow-right"></i></button>
         </div>
 
-
-
-        <div class="tab-pane container" id="menu4">
+        <div class="tab-pane container" id="etapa4">
             <br />
             <table class="table-responsive table-bordered table-striped">
 
@@ -296,8 +325,7 @@ require_once('./class/components.php')
                     class="fas fa-arrow-right"></i></button>
         </div>
 
-
-        <div class="tab-pane container" id="menu5">
+        <div class="tab-pane container" id="etapa5">
             <br />
             <table class="table-responsive table-bordered table-striped">
 
@@ -347,12 +375,11 @@ require_once('./class/components.php')
                 </tr>
             </table>
             <br>
-            <button class="btn btn-primary btn_center animated fadeInLeft">Siguiente <i
+            <button type="submit" class="btn btn-danger btn_center" name="btn_enviar">Enviar formulario <i
                     class="fas fa-arrow-right"></i></button>
         </div>
-
-
     </div>
+</form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
