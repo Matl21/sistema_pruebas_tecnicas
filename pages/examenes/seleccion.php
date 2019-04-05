@@ -53,6 +53,10 @@ if (isset($_POST['btn_enviar'])) {
     <form method="post">
     <div class="form-group">
     <label for="id_convocatoria">Nombre de la convocatoria*</label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-bullhorn"></i></div>
+        </div>
     <select name="convocatoria" id="id_convocatoria"  class="form-control" required>
         <?php 
         for ($i=0; $i <count($convocatoria) ; $i++) { 
@@ -63,6 +67,10 @@ if (isset($_POST['btn_enviar'])) {
     </div>
     <div class="form-group">
     <label for="id_estudiante">Nombre del estudiante*</label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-user-edit"></i></div>
+        </div>
     <select name="estudiante" id="id_estudiante"  class="form-control" required>
         <?php 
         for ($i=0; $i <count($convocatoria) ; $i++) { 
@@ -71,6 +79,7 @@ if (isset($_POST['btn_enviar'])) {
         ?>
     </select>
     </div>
+    <br/>
     <button type="submit" name="btn_enviar" class="btn btn-success">Ir a la prueba <i class="fas fa-external-link-alt"></i></button>
     </form>
 </body>

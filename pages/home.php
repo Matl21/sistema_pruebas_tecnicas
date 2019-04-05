@@ -76,8 +76,16 @@
                             </div>
                         </a>
                     </li>
+                    <li class="estudiante_convocatoria">
+                        <a href="index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php">
+                            <span class="ca-icon"><i class="fas fa-users-cog"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Estudiates por Convocatoria</h2>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
-            </div><!-- content -->
+            </div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 </body>

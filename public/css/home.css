@@ -14,6 +14,9 @@
     padding:0;
     margin:20px auto;
 }
+.cont_center{
+    margin: 0 auto;
+}
 .ca-menu li{
     width: 210px;
     height: 230px;
@@ -25,7 +28,7 @@
     -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    margin-right: 8px;
+    margin-right: 1%;
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
     -o-transition: all 300ms linear;
@@ -52,6 +55,9 @@
 }
 .respuestas{
     background: #F9E79F;
+}
+.estudiante_convocatoria{
+    background: #A2D9CE ;
 }
 .ca-menu li:last-child{
     margin-right: 0px;
