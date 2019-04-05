@@ -14,7 +14,7 @@
     <div class="container">
                 <ul class="ca-menu">
                     <li class="exam">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/examenes/steps.php">
                             <span class="ca-icon"><i class="fas fa-pen-nib"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Examenes</h2>
@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="convocatoria">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/convocatoria/convocatoria.php">
                             <span class="ca-icon"><i class="fas fa-bullhorn"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Convocatoria</h2>
@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li class="preguntas">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/preguntas/preguntas.php">
                             <span class="ca-icon" id="heart"><i class="fas fa-question"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Preguntas</h2>
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li class="estudiantes">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/estudiantes/estudiantes.php">
                             <span class="ca-icon"><i class="fas fa-book-open"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Estudiantes</h2>
@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li class="usuarios">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/usuarios/usuarios.php">
                             <span class="ca-icon"><i class="fas fa-users"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Usuarios</h2>
@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li class="respuestas">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/respuestas/respuestas.php">
                             <span class="ca-icon"><i class="fas fa-edit"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Respuestas</h2>

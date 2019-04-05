@@ -19,7 +19,7 @@ if (isset($_POST['btn_agregar'])) {
   //Mensaje de Nuevo registro
   Components::messageAgregar();
   //redireccionar a la pagina de mantenimiento
-  //header('Location: index.php?contenido=pages/usuarios/usuarios.php');
+  header('Location: index.php?contenido=pages/usuarios/usuarios.php');
 }
 
 if (isset($_POST['btn_regresar'])) {

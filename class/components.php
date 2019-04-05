@@ -3,7 +3,7 @@ class Components{
     public static function generarRadios($name,$cantidad){
         for ($i=1; $i <=$cantidad ; $i++) { 
             echo "<label class=\"label_radios\"> 
-            <input type=\"radio\" name=\"$name\" value=\"$i\">$i
+            <input type=\"radio\" name=\"$name\" value=\"$i\" required>$i
             </label> ";
         }
     }

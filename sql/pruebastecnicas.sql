@@ -117,12 +117,10 @@ insert into preguntas values (null,1,'Declarar Variables y tipos de datos', null
 insert into preguntas values (null,1,' Implementar Métodos dentro del código del proyecto', null,4,'2019-03-18',1);
 insert into preguntas values (null,1,'¿Qué pasaría si instanciamos un objeto a partir de una clase en la cual las propiedades no se declaran tipo public?', null,4,'2019-03-18',1);
 
-/*
 insert into preguntas values (null,1,'Identificar los conceptos básicos de la calidad del software', null,5,'2019-03-18',1);
 insert into preguntas values (null,1,'Interpretar el código de un programa existente', null,5,'2019-03-18',1);
 insert into preguntas values (null,1,'Utilizar herramientas para tomar apuntes', null,5,'2019-03-18',1);
 insert into preguntas values (null,1,'¿Justifique para qué se realiza la documentación del código y cuáles son los tipos de comentarios que podemos aplicar a un programa?', null,5,'2019-03-18',1);
-*/
 
 /**xamari**/
 insert into preguntas values (null,2,'Elaborar la sintaxis de un pseudocódigo según la nomenclatura preestablecida', null,1,'2019-03-18',1);
@@ -150,8 +148,85 @@ insert into preguntas values (null,2,'Mostrar texto dentro de la aplicación', n
 insert into preguntas values (null,2,'Utilizar tamaños y escalas en la aplicación  ', null,5,'2019-03-18',1);
 insert into preguntas values (null,2,'¿Al aplicar estilo a una aplicación móvil el resultado únicamente se muestra cuando se trabaja en el entorno de desarrollo?, explique su respuesta.', null,5,'2019-03-18',1);
 
-/**diagnosticoPHP**/
+/*---- HTML ------*/
+insert into preguntas values (null,3,'Utilizar la sintaxis básica de etiquetas para dar formato al texto de las páginas web.', null,1,'2019-03-18',1);
+insert into preguntas values (null,3,'Modificar el color de los párrafos en los documentos HTML.', null,1,'2019-03-18',1);
+insert into preguntas values (null,3,'Cambiar el tipo de fuente que utilizan los párrafos.', null,1,'2019-03-18',1);
+insert into preguntas values (null,3,'¿En qué parte de la estructura de una página web se coloca la línea de código para personalizar el fondo y cuáles son los parámetros que se utilizan?', null,1,'2019-03-18',1);
 
+insert into preguntas values (null,3,'Modificar diversas propiedades de las imágenes.',null,2,'2019-03-18',1);
+insert into preguntas values (null,3,'Aplicar diversas capas a las imágenes para añadir diversos elementos.', null,2,'2019-03-18',1);
+insert into preguntas values (null,3,'Optimizar imágenes para su uso en la web',null,2,'2019-03-18',1);
+insert into preguntas values (null,3,'¿Justifique porque al diseñar una plantilla de página Web utilizando Photoshop se tiene que programar primeramente en JavaScript?',null,2,'2019-03-18',1);
+
+insert into preguntas values (null,3,'Insertar imágenes de manera correcta en las páginas web utilizando la etiqueta respectiva.', null,3,'2019-03-18',1);
+insert into preguntas values (null,3,'Identificar los diversos tipos de hipervínculos que se pueden añadir a las páginas web.', null,3,'2019-03-18',1);
+insert into preguntas values (null,3,'Elaborar una página web utilizando las diversas etiquetas HTML.', null,3,'2019-03-18',1);
+insert into preguntas values (null,3,'¿Por qué en una página web diseñada para qué presente un sonido al acceder, no genera dicha ejecución?', null,3,'2019-03-18',1);
+
+insert into preguntas values (null,3,'Utilizar diversos editores de texto para escribir código JavaScript', null,4,'2019-03-18',1);
+insert into preguntas values (null,3,'Manejar la sintaxis básica de JavaScript como la declaración de variables, operadores.', null,4,'2019-03-18',1);
+insert into preguntas values (null,3,'Utilizar las diversas estructuras de control para resolver problemas básicos.', null,4,'2019-03-18',1);
+insert into preguntas values (null,3,'¿Qué pasaría si se coloca de manera incorrecta el llamado del enlace de JavaScript en una página web?', null,4,'2019-03-18',1);
+
+insert into preguntas values (null,3,'Distinguir la sintaxis básica de jQuery.', null,5,'2019-03-18',1);
+insert into preguntas values (null,3,'Manipular elementos HTML y CSS desde jQuery.', null,5,'2019-03-18',1);
+insert into preguntas values (null,3,'Manipular de manera acertada los componentes de Angular', null,5,'2019-03-18',1);
+insert into preguntas values (null,3,'¿Por qué para aplicar el framework Angular en una página web se hace la llamada a un archivo con formato de JavaScript? ', null,5,'2019-03-18',1);
+
+/**---- Tester ------**/
+insert into preguntas values (null,4,'Realizar el análisis de requerimientos de funcionalidad de una aplicación', null,1,'2019-03-18',1);
+insert into preguntas values (null,4,'Organizar la asignación de tareas que se desarrollaran en el ambiente de pruebas', null,1,'2019-03-18',1);
+insert into preguntas values (null,4,'Ejecutar pruebas backoffice, analyst y Project Managers', null,1,'2019-03-18',1);
+insert into preguntas values (null,4,'¿Cuál es la finalidad de realizar pruebas desde las etapas iniciales del desarrollo del software?', null,1,'2019-03-18',1);
+
+insert into preguntas values (null,4,'Identificar la sintaxis del lenguaje C#',null,2,'2019-03-18',1);
+insert into preguntas values (null,4,'Resolver operaciones matemáticas básicas en C#. ',null,2,'2019-03-18',1);
+insert into preguntas values (null,4,'Elaborar soluciones a problemas básicos en C#',null,2,'2019-03-18',1);
+insert into preguntas values (null,4,'¿Por qué es necesario crear métodos o funciones si podemos hacer el mismo proceso dentro del flujo del programa?',null,2,'2019-03-18',1);
+
+insert into preguntas values (null,4,'Identificar la utilidad de las bases de datos en la vida cotidiana', null,3,'2019-03-18',1);
+insert into preguntas values (null,4,'Usar diversos gestores de bases de datos para crear bases de datos.', null,3,'2019-03-18',1);
+insert into preguntas values (null,4,'Utilizar el lenguaje SQL para leer, crear, modificar y eliminar datos desde las bases de datos. ', null,3,'2019-03-18',1);
+insert into preguntas values (null,4,'¿En qué manera beneficia a la optimización de las base de datos, realizar la practica de normalización?', null,3,'2019-03-18',1);
+
+insert into preguntas values (null,4,'Identificar la utilidad de los programas informáticos.', null,4,'2019-03-18',1);
+insert into preguntas values (null,4,'Emplear silogismos lógicos para solventar problemas planteados.', null,4,'2019-03-18',1);
+insert into preguntas values (null,4,'Identificar las diversas estructuras de control para solucionar problemas', null,4,'2019-03-18',1);
+insert into preguntas values (null,4,'¿Por qué al usar una variable simple solo podemos almacenar un dato y cuando usamos arreglos podemos almacenar hasta N datos?', null,4,'2019-03-18',1);
+
+insert into preguntas values (null,4,'Identificar las fases claves del proceso de gestión', null,5,'2019-03-18',1);
+insert into preguntas values (null,4,'Elaborar diagramas Gantt para gestionar el tiempo de realización de las diversas actividades.', null,5,'2019-03-18',1);
+insert into preguntas values (null,4,'Completar la configuración de TFS en un entorno de trabajo.  ', null,5,'2019-03-18',1);
+insert into preguntas values (null,4,'¿Por qué si utilizamos una herramienta de versionamiento de código fuente, podemos acceder a respaldos creados del proyecto de desarrollo que se elaboró?', null,5,'2019-03-18',1);
+
+/***--- JAVA ---***/
+insert into preguntas values (null,5,'Resuelve problemas haciendo uso de algoritmos.', null,1,'2019-03-18',1);
+insert into preguntas values (null,5,'Aplica algoritmos en lenguaje natural y pseudocódigo.', null,1,'2019-03-18',1);
+insert into preguntas values (null,5,'Resuelve problemas en estructuras de pseudocódigo.', null,1,'2019-03-18',1);
+insert into preguntas values (null,5,'¿Cuáles son las funciones que desempeñan los algoritmos en la resolución de problemas?', null,1,'2019-03-18',1);
+
+insert into preguntas values (null,5,'Aplica los elementos básicos en Lenguaje de estructura HTML.',null,2,'2019-03-18',1);
+insert into preguntas values (null,5,'Utiliza las partes de la estructura básica de un documento HTML.',null,2,'2019-03-18',1);
+insert into preguntas values (null,5,'Aplica correctamente etiquetas en documentos HTML.',null,2,'2019-03-18',1);
+insert into preguntas values (null,5,'¿Escriba el nombre de las etiquetas de una estructura básica para una página en HTML?',null,2,'2019-03-18',1);
+
+insert into preguntas values (null,5,'Utiliza las instrucciones en un programa informática.', null,3,'2019-03-18',1);
+insert into preguntas values (null,5,'Maneja la estructura básica en el Lenguaje JAVA.', null,3,'2019-03-18',1);
+insert into preguntas values (null,5,'Aplica el uso correcto de variables en JAVA.', null,3,'2019-03-18',1);
+insert into preguntas values (null,5,'Haciendo uso de un ejemplo, escriba la función para imprimir en JAVA', null,3,'2019-03-18',1);
+
+insert into preguntas values (null,5,'Aplica el concepto y los tipos de datos en una Base de Datos.', null,4,'2019-03-18',1);
+insert into preguntas values (null,5,'Aplica propiedades ACID a bases de datos.', null,4,'2019-03-18',1);
+insert into preguntas values (null,5,'Crea conexiones a bases de datos.', null,4,'2019-03-18',1);
+insert into preguntas values (null,5,'Escriba la consulta básica para insertar datos en una Base de Datos.', null,4,'2019-03-18',1);
+
+insert into preguntas values (null,5,'Interpreta archivo de código fuente para la identificación de la estructura.', null,5,'2019-03-18',1);
+insert into preguntas values (null,5,'Ejecuta casos de excepción en archivos de código fuente.', null,5,'2019-03-18',1);
+insert into preguntas values (null,5,'Utiliza la técnica Debugging para la resolución de un problema.', null,5,'2019-03-18',1);
+insert into preguntas values (null,5,'Elabore un ejemplo utilizando sintaxis para documentar un proceso.', null,5,'2019-03-18',1);
+
+/**diagnosticoPHP**/
 insert into preguntas values (null,6,'Resuelve problemas haciendo uso de algoritmos.', null,1,'2019-03-18',1);
 insert into preguntas values (null,6,'Aplica algoritmos en lenguaje natural y pseudocódigo.', null,1,'2019-03-18',1);
 insert into preguntas values (null,6,'Resuelve problemas en estructuras de pseudocódigo.', null,1,'2019-03-18',1);
@@ -176,5 +251,3 @@ insert into preguntas values (null,6,'Interpreta archivo de código fuente para 
 insert into preguntas values (null,6,'Ejecuta casos de excepción en archivos de código fuente.', null,5,'2019-03-18',1);
 insert into preguntas values (null,6,'Utiliza la técnica Debugging para la resolución de un problema.', null,5,'2019-03-18',1);
 insert into preguntas values (null,6,'Elabore un ejemplo utilizando sintaxis para documentar un proceso.', null,5,'2019-03-18',1);
-
-INSERT INTO login (id_usuario,id_rol,username,password) VALUES (null, '2', 'perez', MD5('perezperez'));

@@ -1,5 +1,5 @@
 <?php
-include ('class/Components.php');
+require_once('./class/Components.php');
 ?>
 <!doctype html>
 <html lang="en">
