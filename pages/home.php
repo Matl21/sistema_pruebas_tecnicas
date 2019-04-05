@@ -11,7 +11,7 @@
     <h3>Menú Principal del Sistema</h3>
     <hr>
 
-    <div class="container">
+    <div class="container cont_center">
                 <ul class="ca-menu">
                     <li class="exam">
                         <a href="index.php?contenido=pages/examenes/seleccion.php">
