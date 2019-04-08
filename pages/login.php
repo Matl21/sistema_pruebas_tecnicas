@@ -39,6 +39,13 @@
         </div>
     </div>
 </form>
+<?php  
+if (isset($_GET['error'])) {
+    echo "<div class=\"alert alert-danger\" role=\"alert\">
+    <p>".$_GET['error']."</p>
+  </div>";
+}
+?>
 
 </body>
 

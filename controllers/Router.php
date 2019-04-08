@@ -13,6 +13,7 @@ class Router{
 		if( !isset($_SESSION['ok']) )  $_SESSION['ok'] = false;
         
         if($_SESSION['ok']) {
+			$this->route = isset($_GET['r']) ? $_GET['r'] : 'home';
 
 		} else {
 			if( !isset($_POST['user']) && !isset($_POST['pass']) ) {
@@ -24,13 +25,22 @@ class Router{
 				$user_session = new SessionController();
 				$session = $user_session->login($_POST['user'], $_POST['pass']);
 				if( empty($session) ) {
-					echo 'El usuario y el password son incorrectos';
+					//echo 'El usuario y el password son incorrectos';
+					$login_form = new ViewController();
+					$login_form->load_view('login');
+					header('Location: ./?error=El usuario ' . $_POST['user'] . ' y el password proporcionado no coinciden');
 				} else {
-					echo 'Acceso de forma existosa';
+					echo 'El usuario y el password son correctos';
+					//var_dump($session);
+					
+					$_SESSION['ok'] = true;
+					foreach ($session as $row) {
+						$_SESSION['user'] = $row['username'];
+					}
+					header('Location: ./');
 				}
 			}
-				
-			}
+		}
 	}
 }
 ?>
