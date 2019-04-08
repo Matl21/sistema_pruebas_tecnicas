@@ -80,7 +80,7 @@
                         <a href="index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php">
                             <span class="ca-icon"><i class="fas fa-users-cog"></i></span>
                             <div class="ca-content">
-                                <h2 class="ca-main">Estudiates por Convocatoria</h2>
+                                <h2 class="ca-main">Estudiantes por Convocatoria</h2>
                             </div>
                         </a>
                     </li>

@@ -1,6 +1,6 @@
 <?php 
 require_once('Model.php');
-class LoginModel extends Model  {
+class UsuariosModel extends Model  {
     public $id_usuario;
     public $id_rol;
     public $username;
@@ -12,7 +12,7 @@ class LoginModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "INSERT INTO login (id_usuario,id_rol,username,password) VALUES (null, '$id_rol', '$username', MD5('$password'));";
+            $this->query = "INSERT INTO usuarios (id_usuario,id_rol,username,password) VALUES (null, '$id_rol', '$username', MD5('$password'));";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
@@ -24,7 +24,7 @@ class LoginModel extends Model  {
     public function read(){
         $data = array();
         try {
-            $this->query = "SELECT * FROM login";
+            $this->query = "SELECT * FROM usuarios";
             $this->get_query();
 
             foreach ($this->rows as $key => $value) {
@@ -43,7 +43,7 @@ class LoginModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE login SET id_rol= '$id_rol',username = '$username',password=MD5('$password') WHERE id_usuario = $id_usuario;";
+            $this->query = "UPDATE usuarios SET id_rol= '$id_rol',username = '$username',password=MD5('$password') WHERE id_usuario = $id_usuario;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -54,7 +54,7 @@ class LoginModel extends Model  {
     //Metodo que se encarga de eliminar un registro de la base de datos
 	public function delete( $id_usuario = '' ) {
         try {
-            $this->query = "DELETE FROM login WHERE id_usuario = $id_usuario";
+            $this->query = "DELETE FROM usuarios WHERE id_usuario = $id_usuario";
 		    $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder eliminar el registro
@@ -66,7 +66,7 @@ class LoginModel extends Model  {
     public function findById($id_usuario = ''){
         $data = array();
         try {
-            $this->query = "SELECT * FROM login WHERE id_usuario = $id_usuario;";
+            $this->query = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario;";
             $this->get_query();
 
             foreach ($this->rows as $key => $value) {
@@ -75,6 +75,23 @@ class LoginModel extends Model  {
         } catch (Exception $e) {
             //Mensaje de error al no poder obtener los registros
             echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
+    public function validate_user($user, $pass){
+        
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM usuarios WHERE username = '$user' AND password = MD5('$pass');";
+            $this->get_query();
+
+            foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+            }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener los datos: ".$e->errorMessage(); 
         }
         return $data;
     }

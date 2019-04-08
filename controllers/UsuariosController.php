@@ -1,10 +1,10 @@
 <?php 
-require_once('./models/LoginModel.php');
+require_once('./models/UsuariosModel.php');
 class UsuariosController {
     private $model;
     
 	public function __construct() {
-		$this->model = new LoginModel();
+		$this->model = new UsuariosModel();
     }
     
 	public function create( $datos = array() ) {

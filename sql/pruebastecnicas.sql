@@ -58,7 +58,7 @@ foreign key (id_estudiante) references estudiante(id_estudiante),
 foreign key (id_convocatoria) references convocatoria(id_convocatoria)
 );
 
-create table login(
+create table usuarios(
 id_usuario int primary key auto_increment not null,
 id_rol int not null,
 username varchar(100) not null,
@@ -72,10 +72,10 @@ insert into rol values (2, 'Estudiante', 'El rol que solo se encargara de contes
 insert into rol values (3, 'Docente', 'El rol que puede contestar preguntas y ademas tiene más privilegios');
 
 /*** Personas asignadas por defecto**/
-insert into login values (null, 1, 'ivannia.portillo@sv.cds', MD5('html5'));
-insert into login values (null, 1, 'kevin.martinez@sv.cds', MD5('html5'));
-insert into login values (null, 1, 'maria.estrada@sv.cds', MD5('html5'));
-insert into login values (null, 2, 'usuario@sv.cds', MD5('usuario2019'));
+insert into usuarios values (null, 1, 'ivannia.portillo@sv.cds', MD5('html5'));
+insert into usuarios values (null, 1, 'kevin.martinez@sv.cds', MD5('html5'));
+insert into usuarios values (null, 1, 'maria.estrada@sv.cds', MD5('html5'));
+insert into usuarios values (null, 2, 'usuario@sv.cds', MD5('usuario2019'));
 
 /***** Convocatorias ****/
 insert into convocatoria values (1, 'Desarrollador de aplicaciones Web en C# Usando ASP.net MVC', null);

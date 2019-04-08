@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="public/css/bootstrap-4.3.1-css/bootstrap.min.css" >
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
     <!-- FontAwosome -->
-    <link rel="stylesheet" href="public/fontawesome-free-5.8.1-web/css/all.css" >
+    <link rel="stylesheet" href="public/css/fontawesome-free-5.8.1-web/css/all.css" >
     
     <link rel="stylesheet" href="public/css/animate.css">
     <!-- Original Estilo-->
@@ -58,6 +58,7 @@
     <main>
         <article>
             <?php
+            /*
             $home = 'pages/home.php';
             if (isset($_GET['contenido'])) {
                 $contenido = $_GET['contenido'];
@@ -65,14 +66,14 @@
             }else{
                 include($home);
             }
+            */
             
-            /*
             require_once('./controllers/Autoload.php');
             $autoload = new Autoload();
 
             $route = isset($_GET['r'])? $_GET['r'] : 'home';
             $main = new Router($route);
-            */
+            
             ?>
         </article>
     </main>
