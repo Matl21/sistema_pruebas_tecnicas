@@ -23,9 +23,17 @@ class PreguntasController {
 		return $this->model->delete($id_preguntas);
     }
 
-    public function findById($id_preguntas = ''){
-        return $this->model->findById($id_preguntas);
-    }
+  public function findById($id_preguntas = ''){
+    return $this->model->findById($id_preguntas);
+		}
+	
+	public function findByRange($inicio, $maxResult){
+		return $this->model->findByRange($inicio, $maxResult);
+		}
+	
+	public function countRegistros(){
+			return $this->model->countRegistros();
+		}
     
 	public function __destruct() {
 		//unset($this);

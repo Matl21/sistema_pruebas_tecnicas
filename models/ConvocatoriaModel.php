@@ -81,7 +81,24 @@ class ConvocatoriaModel extends Model  {
             //Mensaje de error al no poder obtener los registros
             echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
         }
+        return $data;
+    }
+
+    //Buscar los registros en base a un rango especificado
+    public function findByRange($inicio, $maxResult){
+        $data = array();
+        $first=$inicio-1;
+        try {
+            $this->query = "SELECT * FROM convocatoria LIMIT $first, $maxResult;";
+        $this->get_query();
         
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener los datos: ".$e->errorMessage(); 
+        }
         return $data;
     }
     

@@ -4,8 +4,24 @@ require_once('./class/EntityArray.php');
 
 //Instacia de la clase controlador
 $preguntasController = new PreguntasController();
+$preguntasController2 = new PreguntasController();
 //Llenado del arreglo
-$preguntas= $preguntasController->read();
+$preguntas2= $preguntasController2->read();
+$numRegistros = count($preguntas2);
+
+if(isset($_GET['paginator'])){
+$maxResult=10;
+$inicio=($_GET['paginator'])-1;
+$first = $inicio*$maxResult;
+$preguntas = $preguntasController->findByRange($first,$maxResult);
+$numPaginator = ceil($numRegistros/$maxResult);
+}else{
+$maxResult=10;
+$inicio=0;
+$preguntas = $preguntasController->findByRange(1,$maxResult);
+$numPaginator = ceil($numRegistros/$maxResult);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +42,13 @@ $preguntas= $preguntasController->read();
 Nuevo Registro
 <i class="fas fa-pen"></i>
 </button>
+<label for="id_paginar"> Paginar: </label>
+<select name="paginar" id="id_paginar">
+<option value="5" seleted>5</option>
+<option value="10" selected>10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+</select>
 <br/><br/>
 
 
@@ -66,9 +89,22 @@ echo "
 echo "</table>
 </div>
 ";
-
-
-
 ?>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Anterior</a>
+    </li>
+    <?php
+    for ($i=1; $i <=$numPaginator ; $i++) { 
+        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"index.php?contenido=pages/preguntas/preguntas.php&paginator=$i\">$i</a></li>";
+    }
+    ?>
+    <li class="page-item">
+      <a class="page-link" href="#">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+
 </body>
 </html>

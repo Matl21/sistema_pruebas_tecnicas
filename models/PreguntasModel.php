@@ -8,6 +8,7 @@ class PreguntasModel extends Model  {
     public $etapa;
     public $fecha_creacion;
     public $activo;
+    private $total;
     
     //Metodo constructor de la clase
 	public function __construct() {
@@ -85,8 +86,41 @@ class PreguntasModel extends Model  {
             //Mensaje de error al no poder obtener los registros
             echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
         }
-        
         return $data;
+    }
+
+    //Obtine los registros en base a un rango especificado
+    public function findByRange($inicio, $maxResult){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM preguntas LIMIT $inicio, $maxResult;";
+        $this->get_query();
+        
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+            }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener los datos: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
+    //Obtine el total de registro de la tabla
+    public function countRegistros(){
+        $data = array();
+        try {
+            $this->query = "SELECT COUNT(*) as total FROM preguntas;";
+            $this->get_query();
+
+            foreach ($this->rows as $key => $value) {
+                array_push($data, $value);
+            }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener los datos: ".$e->errorMessage(); 
+        }
+        return 4;
     }
     
     //Metodo que se encarga de limpiar la variable this
