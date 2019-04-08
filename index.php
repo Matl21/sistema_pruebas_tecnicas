@@ -1,3 +1,7 @@
+<?php
+include_once 'controllers/UsuariosController.php';
+include_once 'controllers/UserSession.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +53,7 @@
                     </li>
 
                     <li><a href="index.php?contenido=pages/login.php"><i class="far fa-user-circle"></i>Iniciar Session</a></li>
+                    <li><a href="index.php?contenido=pages/logout.php"><i class="fas fa-sign-out-alt"></i>Cerrar Session</a></li>
                 </ul>
             </div>
         </nav>
@@ -58,6 +63,7 @@
     <main>
         <article>
             <?php
+
             /*
             $home = 'pages/home.php';
             if (isset($_GET['contenido'])) {
@@ -67,13 +73,44 @@
                 include($home);
             }
             */
-            
-            require_once('./controllers/Autoload.php');
-            $autoload = new Autoload();
+            $home = 'pages/home.php';
+            $usuariosController = new UsuariosController();
+            $userSession = new UserSession();
 
-            $route = isset($_GET['r'])? $_GET['r'] : 'home';
-            $main = new Router($route);
-            
+            if(isset($_SESSION['user'])){
+                //echo "sesion iniciada";
+
+                $usuariosController->setUser($userSession->getCurrentUser());
+                echo "Bienvenido ",$userSession->getCurrentUser();
+                
+                if (isset($_GET['contenido'])) {
+                $contenido = $_GET['contenido'];
+                include ($contenido);
+                }else{
+                    include($home);
+                }
+                
+            }else if(isset($_POST['username']) && isset($_POST['password'])){
+                //echo "No existe el usuario";
+                $userForm = $_POST['username'];
+                $passForm = $_POST['password'];
+
+                if($usuariosController->userExists($userForm, $passForm)){
+                    //echo "Existe el usuario";
+                    $userSession->setCurrentUser($userForm);
+                    $usuariosController->setUser($userForm);
+                    
+                    include_once 'pages/home.php';
+                }else{
+                    //echo "No existe el usuario";
+                    $errorLogin = "Nombre de usuario y/o password incorrecto";
+                    include_once 'pages/login.php';
+                }
+                
+            }else{
+                //echo "login";
+                include_once 'pages/login.php';
+            }
             ?>
         </article>
     </main>

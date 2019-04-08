@@ -5,6 +5,7 @@ class UsuariosModel extends Model  {
     public $id_rol;
     public $username;
     public $password;
+    private $nombre;
     
     //Metodo que inserta registros dentro de la base datos
     public function create( $datos = array() ) {
@@ -79,11 +80,11 @@ class UsuariosModel extends Model  {
         return $data;
     }
 
-    public function validate_user($user, $pass){
+    public function validate_user($username, $password){
         
         $data = array();
         try {
-            $this->query = "SELECT * FROM usuarios WHERE username = '$user' AND password = MD5('$pass');";
+            $this->query = "SELECT * FROM usuarios WHERE username = '$username' AND password = MD5('$password');";
             $this->get_query();
 
             foreach ($this->rows as $key => $value) {
@@ -94,6 +95,44 @@ class UsuariosModel extends Model  {
             echo "No se pudo obtener los datos: ".$e->errorMessage(); 
         }
         return $data;
+    }
+
+    public function userExists($username, $password){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM usuarios WHERE username = '$username' AND password = MD5('$password');";
+            $this->get_query();
+
+            foreach ($this->rows as $key => $value) {
+                array_push($data, $value);
+            }
+            if(count($data)>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener los datos: ".$e->errorMessage(); 
+        }
+    }
+
+    public function setUser($username){
+        try{
+        $this->query = "SELECT * FROM usuarios WHERE username = '$username';";
+        $this->get_query();
+        foreach ($this->rows as $currentUser) {
+            $this->nombre = $currentUser['username'];
+            $this->username = $currentUser['username'];
+        }
+        } catch (Exception $e) {
+        //Mensaje de error al no poder obtener los registros
+        echo "No se pudo obtener los datos: ".$e->errorMessage(); 
+        }
+    }
+
+    public function getNombre(){
+        return $this->nombre;
     }
     
     //Metodo que se encarga de limpiar la variable this

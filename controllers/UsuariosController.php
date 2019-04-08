@@ -23,9 +23,20 @@ class UsuariosController {
 		return $this->model->delete($id_usuario);
     }
 
-    public function findById($id_usuario = ''){
-        return $this->model->findById($id_usuario);
-    }
+  public function findById($id_usuario = ''){
+    return $this->model->findById($id_usuario);
+		}
+
+	public function userExists($user, $pass){
+		return $this->model->userExists($user, $pass);
+	}
+
+	public function setUser($username){
+	}
+
+	public function getNombre(){
+		return $this->nombre;
+	}
     
 	public function __destruct() {
 		//unset($this);

@@ -8,6 +8,12 @@ class SessionController {
 	public function login($user, $pass) {
 		return $this->session->validate_user($user, $pass);
 	}
+
+	public function logout() {
+		session_start();
+		session_destroy();
+		header('Location: ./');
+	}
     
 }
 ?>

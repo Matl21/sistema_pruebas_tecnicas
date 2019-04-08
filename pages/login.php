@@ -22,10 +22,10 @@
                         <h3>Inicio de Sessión</h3>
                     </div>
                     <div class="form-group" id="user-group">
-                        <input type="text" name="user" class="form-control" placeholder="Nombre de Usuario" aria-describedby="helpId" required>
+                        <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario" aria-describedby="helpId" required>
                     </div>
                     <div class="form-group" id="password-group">
-                        <input type="password" name="pass" class="form-control" placeholder="Contraseña" required>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" 11 class="btn btn-primary button_login"><i class="fas fa-sign-in-alt "></i> Ingresar</button>
