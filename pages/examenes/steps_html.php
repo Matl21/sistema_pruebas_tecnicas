@@ -32,12 +32,12 @@ if (isset($_POST['btn_enviar'])) {
         $c+=1;
         if ($c!=4) {
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0,false);
             //Insertar un registro
             $respuestasController->create($arreglo);
         }else{
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0,false);
             //Insertar un registro
             $respuestasController->create($arreglo);
             $c=0;
@@ -393,7 +393,7 @@ if (isset($_POST['btn_enviar'])) {
     </div>
     </form>
 
-    <script src="public/js/query-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

@@ -19,7 +19,7 @@ $fecha= date("Y-m-d");
 
 if (isset($_POST['btn_agregar'])) {  
   //Conversion de los datos a arreglo
-  $arreglo= EntityArray::respuestasArray(null,$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$fecha,$_POST['abierta'],$_POST['valoracion']);
+  $arreglo= EntityArray::respuestasArray(null,$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$fecha,$_POST['abierta'],$_POST['valoracion'],$_POST['revision']);
   //Insertar un registro
   $respuestasController->create($arreglo);
   //Mensaje de Nuevo registro
@@ -82,6 +82,13 @@ if (isset($_POST['btn_regresar'])) {
         <div class="form-group">
             <label for="id_valoracion">Valoracion</label>
             <input type="text" class="form-control" name="valoracion" id="id_descripcion" placeholder="valoracion">
+        </div>
+        <div class="form-group">
+            <label for="id_revision">Revisión</label>
+            <select class="form-control" name="revision" id="id_revision" placeholder="descripcion">
+                <option value="false">No</option>
+                <option value="true">Si</option>
+            </select>
         </div>
         <div class="form-group">
             <button type="submit" name="btn_agregar" class="btn btn-primary">Guardar <i

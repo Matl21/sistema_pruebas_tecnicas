@@ -47,7 +47,7 @@ echo "<div class=\"table-responsive-md\">
     <th>Fecha</th>
     <th>Tipo pregunta</th>
     <th>valoracion</th>
-    
+    <th>Revisión</th>
     <th colspan='2'>Acciones</th>
 </tr>";
 for ($i=0; $i <count($respuestas) ; $i++) { 
@@ -59,6 +59,12 @@ for ($i=0; $i <count($respuestas) ; $i++) {
   else{
     $val= "Abierta";
   }
+  $rev=null;
+  if ($respuestas[$i]['revision']==0) {
+    $rev="No";
+  }else{
+    $rev="Si";
+  }
 echo "
 <tr>
 <td name='id_respuesta'>". $respuestas[$i]['id_respuesta'] ."</td>
@@ -68,6 +74,7 @@ echo "
 <td>". $respuestas[$i]['fecha'] ."</td>
 <td>". $val ."</td>
 <td>". $respuestas[$i]['valoracion'] ."</td>
+<td>". $rev ."</td>
 <td> 
 <input type=\"hidden\" name=\"r\" value=\"convocatoria-editar\">
 <button type=\"button\" class=\"btn btn-warning\" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/respuestasUpdate.php&id=".$respuestas[$i]['id_respuesta']."'\" ><i class=\"fas fa-edit\"></i></button>

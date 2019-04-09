@@ -81,7 +81,7 @@ include_once 'controllers/UserSession.php';
                 //echo "sesion iniciada";
 
                 $usuariosController->setUser($userSession->getCurrentUser());
-                echo "Bienvenido ",$userSession->getCurrentUser();
+                echo "<label> Usuario: ",$userSession->getCurrentUser(),"</label> ";
                 
                 if (isset($_GET['contenido'])) {
                 $contenido = $_GET['contenido'];

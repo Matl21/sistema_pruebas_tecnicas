@@ -32,12 +32,12 @@ if (isset($_POST['btn_enviar'])) {
         $c+=1;
         if ($c!=4) {
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0,false);
             //Insertar un registro
             $respuestasController->create($arreglo);
         }else{
             //Conversion de los datos a arreglo
-            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0);
+            $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0,false);
             //Insertar un registro
             $respuestasController->create($arreglo);
             $c=0;

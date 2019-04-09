@@ -22,7 +22,7 @@ class EntityArray{
         );
         return $datos;
     }
-    public static function respuestasArray($id_respuesta,$id_pregunta,$id_estudiante,$respuesta,$fecha,$abierta,$valoracion){
+    public static function respuestasArray($id_respuesta,$id_pregunta,$id_estudiante,$respuesta,$fecha,$abierta,$valoracion,$revision){
         $datos = array(
             'id_respuesta' => $id_respuesta,
             'id_pregunta' => $id_pregunta,
@@ -30,7 +30,8 @@ class EntityArray{
             'respuesta' => $respuesta,
             'fecha' => $fecha,
             'abierta' => $abierta,
-            'valoracion' => $valoracion
+            'valoracion' => $valoracion,
+            'revision' => $revision
         );
         return $datos;
     }

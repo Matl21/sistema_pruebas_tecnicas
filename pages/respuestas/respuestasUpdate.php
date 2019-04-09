@@ -23,7 +23,7 @@ $fecha= date("Y-m-d");
 
 if (isset($_POST['btn_editar'])) {  
     //Conversion de los datos a arreglo
-    $arreglo= EntityArray::respuestasArray($id,$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$fecha,$_POST['abierta'],$_POST['valoracion']);
+    $arreglo= EntityArray::respuestasArray($id,$_POST['id_pregunta'],$_POST['id_estudiante'],$_POST['respuesta'],$fecha,$_POST['abierta'],$_POST['valoracion'],$_POST['revision']);
     //var_dump($arreglo);
     //Insertar un registro
     $respuestasController->update($arreglo);
@@ -98,6 +98,21 @@ if (isset($_POST['btn_regresar'])) {
         <div class="form-group">
             <label for="id_valoracion">Valoracion</label>
             <input type="text" class="form-control" name="valoracion" id="id_valoracion" value="<?php echo $respuestas[0]['valoracion'] ?>" placeholder="valoracion">
+        </div>
+        <div class="form-group">
+            <label for="id_revision">Revision*</label>
+            <select class="form-control" name="revision" id="id_revision" placeholder="descripcion" required>
+                <?php 
+                if ($respuestas[0]['revision']==0) {
+                    echo "<option value=\"0\">No</option>";
+                    echo "<option value=\"1\">Si</option>";
+                }
+                else{
+                    echo "<option value=\"1\">Si</option>";
+                    echo "<option value=\"0\">No</option>";
+                }
+                ?>
+            </select>
         </div>
         <div class="form-group">
         <button type="submit" name="btn_editar" class="btn btn-primary"  >Guardar <i class="far fa-save"></i></button>

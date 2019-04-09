@@ -8,6 +8,7 @@ class RespuestasModel extends Model  {
     public $fecha;
     public $abierta;
     public $valoracion;
+    public $revision;
    
     //Metodo constructor de la clase
 	public function __construct() {
@@ -20,7 +21,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "INSERT INTO respuestas (id_respuesta,id_pregunta,id_estudiante,respuesta,fecha,abierta,valoracion) VALUES (null, '$id_pregunta', '$id_estudiante', '$respuesta','$fecha','$abierta','$valoracion');";
+            $this->query = "INSERT INTO respuestas (id_respuesta,id_pregunta,id_estudiante,respuesta,fecha,abierta,valoracion,revision) VALUES (null, '$id_pregunta', '$id_estudiante', '$respuesta','$fecha','$abierta','$valoracion','$revision');";
             $this->set_query();
         }  catch (Exception $e) {
             //Mensaje de error al no poder crear el registro
@@ -51,7 +52,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion' WHERE id_respuesta = $id_respuesta;";
+            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion', revision='$revision' WHERE id_respuesta = $id_respuesta;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
