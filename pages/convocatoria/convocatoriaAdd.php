@@ -44,6 +44,7 @@ if (isset($_POST['btn_regresar'])) {
           <div class="input-group-text"><i class="fas fa-bullhorn"></i></div>
         </div>
     <input type="text" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre" required>
+    </div>
   </div>
   <div class="form-group">
     <label for="id_descripcion">Descripción</label>

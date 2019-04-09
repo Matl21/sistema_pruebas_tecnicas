@@ -22,6 +22,26 @@
                             </div>
                         </a>
                     </li>
+                    <li class="registrarEstudiante">
+                        <a href="index.php?contenido=pages/estudiantes/registrarEstudiante.php">
+                            <span class="ca-icon"><i class="fas fa-address-card"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Registrar Estudiantes</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="reportes">
+                        <a href="#">
+                            <span class="ca-icon"><i class="fas fa-print"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Reportes</h2>
+                                <h3 class="ca-sub">Generar reportes de estudiantes</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <h3>Mantenimientos</h3>
+                    <hr>
+
                     <li class="convocatoria">
                         <a href="index.php?contenido=pages/convocatoria/convocatoria.php">
                             <span class="ca-icon"><i class="fas fa-bullhorn"></i></span>
@@ -49,15 +69,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="reportes">
-                        <a href="#">
-                            <span class="ca-icon"><i class="fas fa-print"></i></span>
-                            <div class="ca-content">
-                                <h2 class="ca-main">Reportes</h2>
-                                <h3 class="ca-sub">Generar reportes de estudiantes</h3>
-                            </div>
-                        </a>
-                    </li>
+                    
                     <li class="usuarios">
                         <a href="index.php?contenido=pages/usuarios/usuarios.php">
                             <span class="ca-icon"><i class="fas fa-users"></i></span>

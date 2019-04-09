@@ -3,8 +3,6 @@ require_once('./controllers/EstudianteController.php');
 require_once('./class/EntityArray.php');
 require_once('./class/Components.php');
 
-echo "<h3>Nuevo Registro</h3>";
-echo "<hr>";
 //Instacia de la clase controlador
 $estudianteController = new EstudianteController();
 
@@ -33,6 +31,9 @@ if (isset($_POST['btn_regresar'])) {
      <title>Nuevo registro</title>
 </head>
 <body>
+
+<h3>Nuevo Registro</h3>
+<hr>
 
 <form method="post">
   <div class="form-group">
