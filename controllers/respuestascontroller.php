@@ -24,8 +24,12 @@ class RespuestasController {
     }
 
     public function findById($id_respuestas = ''){
-        return $this->model->findById($id_respuestas);
-    }
+    return $this->model->findById($id_respuestas);
+		}
+	
+		public function preguntasRespuestas($id_estudiante = ''){
+			return $this->model->preguntasRespuestas($id_estudiante = '');
+		}
     
 	public function __destruct() {
 		//unset($this);

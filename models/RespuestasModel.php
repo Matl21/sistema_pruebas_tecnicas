@@ -9,6 +9,8 @@ class RespuestasModel extends Model  {
     public $abierta;
     public $valoracion;
     public $revision;
+
+    public $titulo;
    
     //Metodo constructor de la clase
 	public function __construct() {
@@ -52,7 +54,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion', revision='$revision' WHERE id_respuesta = $id_respuesta;";
+            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion', revision='$revision' WHERE id_respuesta = 1;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -87,7 +89,24 @@ class RespuestasModel extends Model  {
         }
         return $data;
     }
-    
+
+    //Metodo que se encarga de obtener el registro en base al ID
+    public function preguntasRespuestas($id_estudiante = ''){
+        $data = array();
+        try {
+            $this->query = "SELECT r.id_respuesta,p.id_pregunta,p.titulo,r.respuesta FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE id_estudiante = $id_estudiante;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {
 		//unset($this);
