@@ -44,6 +44,7 @@ if (isset($_POST['btn_enviar'])) {
         }
     }
     Components::messageAgregar();
+    header("Location: index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=$id_estudiante");
 }
 }
 ?>

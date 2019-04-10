@@ -24,7 +24,7 @@ class EstudianteController {
     }
 
     public function findById($id_estudiante = ''){
-        return $this->model->findById($id_estudiante);
+    return $this->model->findById($id_estudiante);
     }
     
 	public function __destruct() {

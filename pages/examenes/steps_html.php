@@ -35,6 +35,7 @@ if (isset($_POST['btn_enviar'])) {
             $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,false,0,false);
             //Insertar un registro
             $respuestasController->create($arreglo);
+
         }else{
             //Conversion de los datos a arreglo
             $arreglo= EntityArray::respuestasArray(null,($i+$inicio),$id_estudiante,$respuestas[$i],$fecha,true,0,false);
@@ -44,6 +45,7 @@ if (isset($_POST['btn_enviar'])) {
         }
     }
     Components::messageAgregar();
+    header("Location: index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=$id_estudiante");
 }
 }
 ?>
