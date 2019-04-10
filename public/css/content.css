@@ -25,6 +25,10 @@ table{
 .btn_center{
     text-align: center;
 }
+.content_center{
+    text-align: center;
+    margin: 0 auto;
+}
 
 
 /**------ Fin de Contenido --------*/

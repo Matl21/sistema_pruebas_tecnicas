@@ -1,15 +1,20 @@
 <?php
 require_once('./controllers/EstudianteController.php');
 require_once('./controllers/ConvocatoriaController.php');
+require_once('./controllers/PreguntasController.php');
 require_once('./class/EntityArray.php');
 require_once('./class/Components.php');
 
 //Instacia de la clase controlador
 $estudianteController = new EstudianteController();
+$estudianteController2 = new EstudianteController();
 $convocatoriaController = new ConvocatoriaController();
+$preguntasController = new PreguntasController();
+
 //Llenado del arreglo
 $estudiantes = $estudianteController->read();
 $convocatoria= $convocatoriaController->read();
+$revisionEstudiantes = $estudianteController2->revisionEstudiantes();
 
 if (isset($_POST['btn_enviar'])) {
     $id_convocatoria= $_POST['convocatoria'];
@@ -45,7 +50,7 @@ if (isset($_POST['btn_enviar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Seleccion de Prueba</title>
+    <title>Selección de Prueba</title>
     <style>
     .div-izquierdo{
         min-width: 150px;
@@ -88,7 +93,7 @@ if (isset($_POST['btn_enviar'])) {
 <div class="tab-content" id="v-pills-tabContent">
   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-  <h4>Seleccione una prueba técnica</h4>
+  <h4>Seleccioné una prueba técnica</h4>
     <hr/>
     <form method="post">
 
@@ -130,17 +135,83 @@ if (isset($_POST['btn_enviar'])) {
 
   </div>
   <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-  <h4>Seleccione un Alumno</h4>
+  <h4>Exámenes sin valoraciones a preguntas abiertas</h4>
     <hr/>
+
+    <?php
+//Tabla de clase 
+echo "<div class=\"table-responsive-md\">
+<table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
+<tr>
+    <th class='th_mant'>Nombre</th>
+    <th class='th_mant'>Apellidos</th>
+    <th class='th_mant content_center'>Acciones</th>
+</tr>";
+for ($i=0; $i <count($revisionEstudiantes) ; $i++) { 
+echo "
+<tr>
+<td>". $revisionEstudiantes[$i]['nombre'] ."</td>
+<td>". $revisionEstudiantes[$i]['apellido'] ."</td>
+<td class='content_center'> 
+<button type=\"button\" class=\"btn btn-success \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/estudiantes/estudiantesUpdate.php&id=".$revisionEstudiantes[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Valorar Respuestas</button> 
+</td>
+</tr>";
+}
+echo "</table>
+</div>";
+?>
 
   </div>
   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-  <h4>Seleccione un Alumno</h4>
+  <h4>Exámenes realizados</h4>
     <hr/>
+
+    <?php
+//Tabla de clase 
+echo "<div class=\"table-responsive-md\">
+<table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
+<tr>
+    <th class='th_mant'>Nombre</th>
+    <th class='th_mant'>Apellidos</th>
+    <th class='th_mant content_center'>Acciones</th>
+</tr>";
+for ($i=0; $i <count($revisionEstudiantes) ; $i++) { 
+echo "
+<tr>
+<td>". $revisionEstudiantes[$i]['nombre'] ."</td>
+<td>". $revisionEstudiantes[$i]['apellido'] ."</td>
+<td class='content_center'> 
+<button type=\"button\" class=\"btn btn-warning \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=".$revisionEstudiantes[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
+</td>
+</tr>";
+}
+echo "</table>
+</div>";
+?>
+
   </div>
   <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-  <h4>Seleccione una convocatoria</h4>
+  <h4>Preguntas según la convocatoria</h4>
     <hr/>
+
+    <form method="post">
+    <div class="form-group">
+    <label for="id_convocatoria">Nombre de la convocatoria*</label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-bullhorn"></i></div>
+        </div>
+    <select name="convocatoria" id="id_convocatoria"  class="form-control" required>
+        <?php 
+        for ($i=0; $i <count($convocatoria) ; $i++) { 
+            echo "<option value=\"".$convocatoria[$i]['id_convocatoria']."\">".$convocatoria[$i]['nombre']."</option>"; 
+        }
+        ?>
+    </select>
+    </div>
+    <button type="submit" name="btn_preguntas" class="btn btn-success">Mostarar</button>
+    </form>
+    
   </div>
 </div>
 </div>

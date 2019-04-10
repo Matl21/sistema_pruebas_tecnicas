@@ -84,7 +84,26 @@ class EstudianteModel extends Model  {
         }
         return $data;
     }
+
     
+    
+//Metodo que se encarga de obtener el registro en base al ID
+public function revisionEstudiantes(){
+    $data = array();
+    try {
+        $this->query = "SELECT e.id_estudiante,e.nombre,e.apellido FROM estudiante e INNER JOIN respuestas r ON e.id_estudiante=r.id_estudiante GROUP BY e.id_estudiante;";
+        $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+        array_push($data, $value);
+        }
+    } catch (Exception $e) {
+        //Mensaje de error al no poder obtener los registros
+        echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+    }
+    return $data;
+}
+
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {
 		//unset($this);
