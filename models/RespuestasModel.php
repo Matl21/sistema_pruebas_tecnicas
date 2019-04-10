@@ -107,6 +107,35 @@ class RespuestasModel extends Model  {
         return $data;
     }
 
+    public function valoracionRespuestas($id_estudiante = ''){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.id_estudiante = 1 AND r.abierta = true ;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
+    public function valoracionUpdate($id_respuesta = '', $valoracion = ''){
+        try {
+            foreach ($datos as $key => $value) {
+                $$key = $value;
+            }
+            $this->query = "UPDATE respuestas SET valoracion=$valoracion, revision=true WHERE id_respuesta=$id_respuesta;";
+            $this->set_query();
+        } catch (Exception $e) {
+            //Mensaje de error al no poder actualizar el registro
+            echo "No se pudo actualizar los datos: ".$e->errorMessage(); 
+        }
+    }
+
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {
 		//unset($this);

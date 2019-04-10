@@ -120,7 +120,25 @@ class PreguntasModel extends Model  {
             //Mensaje de error al no poder obtener los registros
             echo "No se pudo obtener los datos: ".$e->errorMessage(); 
         }
-        return 4;
+        return $data;
+    }
+
+    //Metodo que se encarga de obtener el registro en base al ID
+    public function preguntasPorConvocatoria($id_convocatoria){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM preguntas WHERE id_convocatoria=$id_convocatoria;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+
     }
     
     //Metodo que se encarga de limpiar la variable this

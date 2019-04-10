@@ -34,6 +34,9 @@ class PreguntasController {
 	public function countRegistros(){
 			return $this->model->countRegistros();
 		}
+	public function	preguntasPorConvocatoria($id_convocatoria = ''){
+			return $this->model->preguntasPorConvocatoria($id_convocatoria);
+		}
     
 	public function __destruct() {
 		//unset($this);

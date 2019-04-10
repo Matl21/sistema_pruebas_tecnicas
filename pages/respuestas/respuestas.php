@@ -36,7 +36,6 @@ $estudiantes = $estudianteController->read();
 
     <?php
 //Tabla de clase 
-//Tabla de clase 
 echo "<div class=\"table-responsive-md\">
 <table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>

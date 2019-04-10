@@ -30,6 +30,9 @@ class RespuestasController {
 		public function preguntasRespuestas($id_estudiante = ''){
 			return $this->model->preguntasRespuestas($id_estudiante);
 		}
+		public function valoracionRespuestas($id_estudiante = ''){
+			return $this->model->valoracionRespuestas($id_estudiante);
+		}
     
 	public function __destruct() {
 		//unset($this);
