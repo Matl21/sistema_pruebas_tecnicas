@@ -54,7 +54,7 @@ class RespuestasModel extends Model  {
             foreach ($datos as $key => $value) {
                 $$key = $value;
             }
-            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion', revision='$revision' WHERE id_respuesta = 1;";
+            $this->query = "UPDATE respuestas SET id_respuesta= '$id_respuesta',id_pregunta = '$id_pregunta',id_estudiante='$id_estudiante',respuesta='$respuesta',fecha='$fecha',abierta='$abierta',valoracion='$valoracion', revision='$revision' WHERE id_respuesta = $id_respuesta;";
             $this->set_query();
         } catch (Exception $e) {
             //Mensaje de error al no poder actualizar el registro
@@ -110,7 +110,7 @@ class RespuestasModel extends Model  {
     public function valoracionRespuestas($id_estudiante = ''){
         $data = array();
         try {
-            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.id_estudiante = 1 AND r.abierta = true ;";
+            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.id_estudiante = 1 AND r.abierta = true AND r.revision=false;";
             $this->get_query();
 
         foreach ($this->rows as $key => $value) {
@@ -125,9 +125,6 @@ class RespuestasModel extends Model  {
 
     public function valoracionUpdate($id_respuesta = '', $valoracion = ''){
         try {
-            foreach ($datos as $key => $value) {
-                $$key = $value;
-            }
             $this->query = "UPDATE respuestas SET valoracion=$valoracion, revision=true WHERE id_respuesta=$id_respuesta;";
             $this->set_query();
         } catch (Exception $e) {

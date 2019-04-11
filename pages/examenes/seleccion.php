@@ -8,6 +8,7 @@ require_once('./class/Components.php');
 //Instacia de la clase controlador
 $estudianteController = new EstudianteController();
 $estudianteController2 = new EstudianteController();
+$estudianteController3 = new EstudianteController();
 $convocatoriaController = new ConvocatoriaController();
 $preguntasController = new PreguntasController();
 
@@ -15,6 +16,7 @@ $preguntasController = new PreguntasController();
 $estudiantes = $estudianteController->read();
 $convocatoria= $convocatoriaController->read();
 $revisionEstudiantes = $estudianteController2->revisionEstudiantes();
+$examenesRealizados = $estudianteController3->examenesEstudiantes();
 
 if (isset($_POST['btn_enviar'])) {
     $id_convocatoria= $_POST['convocatoria'];
@@ -105,7 +107,7 @@ if (isset($_POST['btn_enviar'])) {
         </div>
     <select name="estudiante" id="id_estudiante"  class="form-control" required>
         <?php 
-        for ($i=0; $i <count($convocatoria) ; $i++) { 
+        for ($i=0; $i <count($estudiantes) ; $i++) { 
             echo "<option value=\"".$estudiantes[$i]['id_estudiante']."\">".$estudiantes[$i]['nombre']." ".$estudiantes[$i]['apellido']."</option>"; 
         }
         ?>
@@ -153,7 +155,7 @@ echo "
 <td>". $revisionEstudiantes[$i]['nombre'] ."</td>
 <td>". $revisionEstudiantes[$i]['apellido'] ."</td>
 <td class='content_center'> 
-<button type=\"button\" class=\"btn btn-success \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/estudiantes/estudiantesUpdate.php&id=".$revisionEstudiantes[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Valorar Respuestas</button> 
+<button type=\"button\" class=\"btn btn-success \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/valorarRespuestas.php&id_estudiante=".$revisionEstudiantes[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Valorar Respuestas</button> 
 </td>
 </tr>";
 }
@@ -175,13 +177,13 @@ echo "<div class=\"table-responsive-md\">
     <th class='th_mant'>Apellidos</th>
     <th class='th_mant content_center'>Acciones</th>
 </tr>";
-for ($i=0; $i <count($revisionEstudiantes) ; $i++) { 
+for ($i=0; $i <count($examenesRealizados) ; $i++) { 
 echo "
 <tr>
-<td>". $revisionEstudiantes[$i]['nombre'] ."</td>
-<td>". $revisionEstudiantes[$i]['apellido'] ."</td>
+<td>". $examenesRealizados[$i]['nombre'] ."</td>
+<td>". $examenesRealizados[$i]['apellido'] ."</td>
 <td class='content_center'> 
-<button type=\"button\" class=\"btn btn-warning \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=".$revisionEstudiantes[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
+<button type=\"button\" class=\"btn btn-warning \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=".$examenesRealizados[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
 </td>
 </tr>";
 }

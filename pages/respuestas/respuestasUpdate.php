@@ -78,7 +78,7 @@ if (isset($_POST['btn_regresar'])) {
         </div>
         <div class="form-group">
             <label for="id_respuesta">Respuesta*</label>
-            <input type="text" class="form-control" name="respuesta" id="id_respuesta" value="<?php echo $respuestas[0]['respuesta'] ?>" placeholder="respuesta" required>
+            <input type="text" class="form-control" name="respuesta" id="id_respuesta" value="<?php echo $respuestas[0]['respuesta'] ?>" placeholder="respuesta">
         </div>
         <div class="form-group">
             <label for="id_abierta">Tipo de pregunta*</label>

@@ -12,10 +12,13 @@ if (isset($_GET['id_estudiante'])) {
 }
 
 if (isset($_POST['btn_valorar'])) {
-    $arregloRespuestas = [$_POST['valoracion1'],$_POST['valoracion2'],$_POST['valoracion3'],$_POST['valoracion4']];
-    $arregloId = [$_POST['id_respuesta1'],$_POST['id_respuesta2'],$_POST['id_respuesta3'],$_POST['id_respuesta4']];
+    $arregloRespuestas = [$_POST['valoracion1'],$_POST['valoracion2'],$_POST['valoracion3'],$_POST['valoracion4'],$_POST['valoracion5']];
+    $arregloId = [$_POST['id_respuesta1'],$_POST['id_respuesta2'],$_POST['id_respuesta3'],$_POST['id_respuesta4'],$_POST['id_respuesta5']];
     var_dump($arregloRespuestas);
     var_dump($arregloId);
+    for ($i=0; $i <5 ; $i++) { 
+        $respuestasController3->valoracionUpdate($arregloId[$i],$arregloRespuestas[$i]);
+    }
 }
 ?>
 
@@ -51,7 +54,7 @@ for ($i=0; $i <count($respuestasAbiertas) ; $i++) {
 
 echo "
 <tr>
-<input type=\"hidden\" name=\"id_respuesta".($i+1)."\" value=\" " .$respuestasAbiertas[$i]['titulo']. "\">
+<input type=\"hidden\" name=\"id_respuesta".($i+1)."\" value=\" " .$respuestasAbiertas[$i]['id_respuesta']. "\">
 <td class='cont_questions'>". $respuestasAbiertas[$i]['titulo'] ."</td>
 <td>". $respuestasAbiertas[$i]['respuesta'] ."</td>
 <td class='content_center'> 
