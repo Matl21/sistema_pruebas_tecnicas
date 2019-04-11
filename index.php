@@ -51,7 +51,7 @@ include_once 'controllers/UserSession.php';
                             <li><a href="index.php?contenido=pages/respuestas/respuestas.php"><i class="fas fa-code"></i> Respuestas</a></li>
                         </ul>
                     </li>
-
+                    <li><a href="index.php?contenido=pages/about_us.php"><i class="far fa-address-book"></i> Contact</a></li>
                     <li><a href="index.php?contenido=pages/login.php"><i class="far fa-user-circle"></i>Iniciar Session</a></li>
                     <li><a href="index.php?contenido=pages/logout.php"><i class="fas fa-sign-out-alt"></i>Cerrar Session</a></li>
                 </ul>
