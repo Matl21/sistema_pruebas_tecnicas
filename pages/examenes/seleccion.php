@@ -13,7 +13,7 @@ $convocatoriaController = new ConvocatoriaController();
 $preguntasController = new PreguntasController();
 
 //Llenado del arreglo
-$estudiantes = $estudianteController->read();
+$estudiantes = $estudianteController->estudiantesSinExamen();
 $convocatoria= $convocatoriaController->read();
 $revisionEstudiantes = $estudianteController2->revisionEstudiantes();
 $examenesRealizados = $estudianteController3->examenesEstudiantes();

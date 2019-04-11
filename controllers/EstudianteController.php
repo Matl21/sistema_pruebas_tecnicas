@@ -35,6 +35,10 @@ class EstudianteController {
 			return $this->model->examenesEstudiantes();
 		}
 
+		public function estudiantesSinExamen(){
+			return $this->model->estudiantesSinExamen();
+		}
+
 	public function __destruct() {
 		//unset($this);
 	}

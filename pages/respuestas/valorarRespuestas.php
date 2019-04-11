@@ -14,11 +14,12 @@ if (isset($_GET['id_estudiante'])) {
 if (isset($_POST['btn_valorar'])) {
     $arregloRespuestas = [$_POST['valoracion1'],$_POST['valoracion2'],$_POST['valoracion3'],$_POST['valoracion4'],$_POST['valoracion5']];
     $arregloId = [$_POST['id_respuesta1'],$_POST['id_respuesta2'],$_POST['id_respuesta3'],$_POST['id_respuesta4'],$_POST['id_respuesta5']];
-    var_dump($arregloRespuestas);
-    var_dump($arregloId);
+    //var_dump($arregloRespuestas);
+    //var_dump($arregloId);
     for ($i=0; $i <5 ; $i++) { 
         $respuestasController3->valoracionUpdate($arregloId[$i],$arregloRespuestas[$i]);
     }
+    header('Location: index.php?contenido=pages/examenes/seleccion.php');
 }
 ?>
 

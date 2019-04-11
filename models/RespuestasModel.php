@@ -110,7 +110,7 @@ class RespuestasModel extends Model  {
     public function valoracionRespuestas($id_estudiante = ''){
         $data = array();
         try {
-            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.id_estudiante = 1 AND r.abierta = true AND r.revision=false;";
+            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.id_estudiante = $id_estudiante AND r.abierta = true AND r.revision=false;";
             $this->get_query();
 
         foreach ($this->rows as $key => $value) {
