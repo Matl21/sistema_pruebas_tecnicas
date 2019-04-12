@@ -35,7 +35,7 @@ class RespuestasModel extends Model  {
     public function read(){
         $data = array();
         try {
-            $this->query = "SELECT * FROM respuestas";
+            $this->query = "SELECT *,concat(e.nombre,' ',e.apellido) as participante FROM respuestas r INNER JOIN estudiante e ON r.id_estudiante = e.id_estudiante INNER JOIN preguntas p ON p.id_pregunta = r.id_pregunta";
         $this->get_query();
 
         foreach ($this->rows as $key => $value) {

@@ -39,10 +39,10 @@ $estudiantes = $estudianteController->read();
 echo "<div class=\"table-responsive-md\">
 <table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
-    <th>id_respuesta</th>
-    <th>id_pregunta</th>
-    <th>id_estudiante</th>
-    <th>respuesta</th>
+    <th>id respuesta</th>
+    <th>Pregunta</th>
+    <th>Estudiante</th>
+    <th>Respuesta</th>
     <th>Fecha</th>
     <th>Tipo pregunta</th>
     <th>valoracion</th>
@@ -67,8 +67,8 @@ for ($i=0; $i <count($respuestas) ; $i++) {
 echo "
 <tr>
 <td name='id_respuesta'>". $respuestas[$i]['id_respuesta'] ."</td>
-<td>". $respuestas[$i]['id_pregunta'] ."</td>
-<td>". $respuestas[$i]['id_estudiante'] ."</td>
+<td>". $respuestas[$i]['titulo'] ."</td>
+<td>". $respuestas[$i]['participante'] ."</td>
 <td>". $respuestas[$i]['respuesta'] ."</td>
 <td>". $respuestas[$i]['fecha'] ."</td>
 <td>". $val ."</td>
