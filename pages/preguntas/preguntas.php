@@ -18,7 +18,7 @@ $numPaginator = ceil($numRegistros/$maxResult);
 }else{
 $maxResult=10;
 $inicio=0;
-$preguntas = $preguntasController->findByRange(1,$maxResult);
+$preguntas = $preguntasController->findByRange($inicio,$maxResult);
 $numPaginator = ceil($numRegistros/$maxResult);
 }
 

@@ -49,6 +49,8 @@ echo "</table>
 ";
 ?>
 <a href="./index.php" class="btn btn-primary">Aceptar</a>
-
+<button type="button" name="btn_regresar" class="btn btn-danger"
+                        onclick="window.location.href='index.php?contenido=pages/examenes/seleccion.php'">Regresar
+                        <i class="fas fa-share-square"></i></button>
 </body>
 </html>

@@ -45,5 +45,9 @@ class RespuestasController {
 		public function generarReportes($id_estudiante = ''){
 			return $this->model->generarReportes($id_estudiante);
 		}
+
+		public function estudianteRespuestasValoradas(){
+			return $this->model->estudianteRespuestasValoradas();
+		}
     
 }

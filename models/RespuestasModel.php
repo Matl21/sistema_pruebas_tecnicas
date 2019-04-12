@@ -107,6 +107,22 @@ class RespuestasModel extends Model  {
         return $data;
     }
 
+    public function estudianteRespuestasValoradas(){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM respuestas r INNER JOIN estudiante e ON r.id_estudiante = e.id_estudiante WHERE r.revision =true GROUP BY r.id_estudiante;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
     public function valoracionRespuestas($id_estudiante = ''){
         $data = array();
         try {

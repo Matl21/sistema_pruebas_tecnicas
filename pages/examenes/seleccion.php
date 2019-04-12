@@ -2,6 +2,7 @@
 require_once('./controllers/EstudianteController.php');
 require_once('./controllers/ConvocatoriaController.php');
 require_once('./controllers/PreguntasController.php');
+require_once('./controllers/RespuestasController.php');
 require_once('./class/EntityArray.php');
 require_once('./class/Components.php');
 
@@ -9,6 +10,7 @@ require_once('./class/Components.php');
 $estudianteController = new EstudianteController();
 $estudianteController2 = new EstudianteController();
 $estudianteController3 = new EstudianteController();
+$respuestasController = new RespuestasController();
 $convocatoriaController = new ConvocatoriaController();
 $preguntasController = new PreguntasController();
 
@@ -17,6 +19,7 @@ $estudiantes = $estudianteController->estudiantesSinExamen();
 $convocatoria= $convocatoriaController->read();
 $revisionEstudiantes = $estudianteController2->revisionEstudiantes();
 $examenesRealizados = $estudianteController3->examenesEstudiantes();
+$valoracionesRealizados = $respuestasController->estudianteRespuestasValoradas();
 
 if (isset($_POST['btn_enviar'])) {
     $id_convocatoria= $_POST['convocatoria'];
@@ -86,9 +89,9 @@ if (isset($_POST['btn_enviar'])) {
 <div class="div-izquierdo container">
 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
   <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Reponder un examen</a>
-  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Valoración de respuestas</a>
   <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Examenes de estudiantes</a>
-  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Preguntas</a>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Valoración de respuestas</a>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Ver ponderación de valoración</a>
 </div>
 </div>
 <div class="div-derecho container">
@@ -193,26 +196,31 @@ echo "</table>
 
   </div>
   <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-  <h4>Preguntas según la convocatoria</h4>
+  <h4>Ver valoraciones realizadas a respuestas</h4>
     <hr/>
 
-    <form method="post">
-    <div class="form-group">
-    <label for="id_convocatoria">Nombre de la convocatoria*</label>
-    <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><i class="fas fa-bullhorn"></i></div>
-        </div>
-    <select name="convocatoria" id="id_convocatoria"  class="form-control" required>
-        <?php 
-        for ($i=0; $i <count($convocatoria) ; $i++) { 
-            echo "<option value=\"".$convocatoria[$i]['id_convocatoria']."\">".$convocatoria[$i]['nombre']."</option>"; 
-        }
-        ?>
-    </select>
-    </div>
-    <button type="submit" name="btn_preguntas" class="btn btn-success">Mostarar</button>
-    </form>
+    <?php
+//Tabla de clase 
+echo "<div class=\"table-responsive-md\">
+<table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
+<tr>
+    <th class='th_mant'>Nombre</th>
+    <th class='th_mant'>Apellidos</th>
+    <th class='th_mant content_center'>Acciones</th>
+</tr>";
+for ($i=0; $i <count($valoracionesRealizados) ; $i++) { 
+echo "
+<tr>
+<td>". $valoracionesRealizados[$i]['nombre'] ."</td>
+<td>". $valoracionesRealizados[$i]['apellido'] ."</td>
+<td class='content_center'> 
+<button type=\"button\" class=\"btn btn-info \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=".$valoracionesRealizados[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
+</td>
+</tr>";
+}
+echo "</table>
+</div>";
+?>
     
   </div>
 </div>
