@@ -70,7 +70,7 @@ for ($i=0; $i <count($preguntas) ; $i++) {
 echo "
 <tr>
 <td name='id_pregunta'>". $preguntas[$i]['id_pregunta'] ."</td>
-<td>". $preguntas[$i]['id_convocatoria'] ."</td>
+<td>". $preguntas[$i]['nombre'] ."</td>
 <td>". $preguntas[$i]['titulo'] ."</td>
 <td>". $preguntas[$i]['descripcion'] ."</td>
 <td>". $preguntas[$i]['etapa'] ."</td>

@@ -33,7 +33,7 @@ class PreguntasModel extends Model  {
     public function read(){
         $data = array();
         try {
-            $this->query = "SELECT * FROM preguntas";
+            $this->query = "SELECT * FROM preguntas p INNER JOIN convocatoria c ON p.id_convocatoria = c.id_convocatoria;";
         $this->get_query();
 
         foreach ($this->rows as $key => $value) {
@@ -93,7 +93,7 @@ class PreguntasModel extends Model  {
     public function findByRange($inicio, $maxResult){
         $data = array();
         try {
-            $this->query = "SELECT * FROM preguntas LIMIT $inicio, $maxResult;";
+            $this->query = "SELECT * FROM preguntas p INNER JOIN convocatoria c ON p.id_convocatoria = c.id_convocatoria LIMIT $inicio, $maxResult;";
         $this->get_query();
         
         foreach ($this->rows as $key => $value) {
