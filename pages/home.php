@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li class="reportes">
-                        <a href="#">
+                        <a href="index.php?contenido=pages/reportes/mostrarReportes.php">
                             <span class="ca-icon"><i class="fas fa-print"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Reportes</h2>

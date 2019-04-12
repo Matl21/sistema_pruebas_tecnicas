@@ -133,6 +133,38 @@ class RespuestasModel extends Model  {
         }
     }
 
+    public function reportesRespuestas(){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM respuestas r INNER JOIN estudiante e ON r.id_estudiante = e.id_estudiante GROUP BY r.id_estudiante;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
+    public function generarReportes($id_estudiante = ''){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM respuestas r INNER JOIN estudiante e ON e.id_estudiante = r.id_estudiante INNER JOIN preguntas p ON p.id_pregunta = r.id_pregunta  INNER JOIN convocatoria c ON c.id_convocatoria = p.id_convocatoria where r.id_estudiante=$id_estudiante;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
+
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {
 		//unset($this);

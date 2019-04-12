@@ -1,0 +1,35 @@
+body{
+    font-family: century Gothic;
+}
+
+table {
+    border-collapse: collapse;
+}
+  
+table, th, td {
+    border: 1px solid black;
+}
+/* Franjas oscuaras**/
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.cont-center{
+text-align: center;
+}
+
+img{
+    float: right;
+    margin-top: -50px;
+}
+.col1{
+    width: 280px;
+    text-align: left;
+    padding: 6px;
+}
+.col2{
+    width: 310px;
+    text-align: left;
+    padding: 6px;
+}
+.total{
+    padding: 3px;
+}
