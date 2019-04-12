@@ -107,7 +107,7 @@ if (isset($_POST['btn_regresar'])) {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-venus-mars"></i></div>
                         </div>
-                        <select name="sexo" id="sexo" class="form-control" required>
+                        <select name="sexo" id="sexo" class="form-control col-5" required>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Otro">Otro</option>
@@ -120,7 +120,7 @@ if (isset($_POST['btn_regresar'])) {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                         </div>
-                        <input type="date" id="fecha_nacimiento" class="form-control" name="fecha_nacimiento"
+                        <input type="date" id="fecha_nacimiento" class="form-control col-4" name="fecha_nacimiento"
                             id="id_fecha_nacimiento" placeholder="Fcha de nacimiento" required>
                     </div>
                 </div>

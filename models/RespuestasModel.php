@@ -152,7 +152,7 @@ class RespuestasModel extends Model  {
     public function generarReportes($id_estudiante = ''){
         $data = array();
         try {
-            $this->query = "SELECT * FROM respuestas r INNER JOIN estudiante e ON e.id_estudiante = r.id_estudiante INNER JOIN preguntas p ON p.id_pregunta = r.id_pregunta  INNER JOIN convocatoria c ON c.id_convocatoria = p.id_convocatoria where r.id_estudiante=$id_estudiante;";
+            $this->query = "SELECT r.id_respuesta,r.id_pregunta,r.id_estudiante,r.respuesta,r.fecha,r.abierta,r.valoracion,r.revision,concat(e.nombre,' ',e.apellido) as participante,e.sexo,p.id_convocatoria,p.titulo,c.nombre as convocatoria FROM respuestas r INNER JOIN estudiante e ON e.id_estudiante = r.id_estudiante INNER JOIN preguntas p ON p.id_pregunta = r.id_pregunta  INNER JOIN convocatoria c ON c.id_convocatoria = p.id_convocatoria where r.id_estudiante=$id_estudiante;";
             $this->get_query();
 
         foreach ($this->rows as $key => $value) {

@@ -7,6 +7,7 @@ if (isset($_GET['id_estudiante'])) {
     $respuestasModel = new RespuestasModel;
     $reportes = $respuestasModel->generarReportes($_GET['id_estudiante']);
 
+
 $html .= '<h4 class="cont-center" >EVALUACIÓN INICIAL</h4><img src="mpdf/fundacion.png" width="50" />';
 $html .= "<table>
 <tr>
@@ -15,11 +16,11 @@ $html .= "<table>
 </tr>
 <tr>
 <td class='col1'>Título de la capacitación:</td>
-<th class='col2'>".$reportes[0]['nombre']."</th>
+<th class='col2'>".$reportes[0]['convocatoria']."</th>
 </tr>
 <tr>
 <td class='col1'>Nombre del participante: </td>
-<th class='col2'>".$reportes[0]['nombre']."</th>
+<th class='col2'>".$reportes[0]['participante']."</th>
 </tr>
 <tr>
 <td class='col1'>Fecha de realización de la prueba:</td>
