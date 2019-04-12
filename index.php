@@ -34,7 +34,7 @@ include_once 'controllers/UserSession.php';
     <header id="header">
         <nav class="menu">
             <div class="logo_usaid">
-                <a href="https://www.facebook.com/CDSSAFGK/"><img src="public/img/logo/usaid.png" alt=""></a>
+                <a href="https://www.facebook.com/CDSSAFGK/"><img src="public/img/logo/usaid_es.jpg" alt=""></a>
                 <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
             </div>
             <div class="enlaces" id="enlaces">
@@ -126,7 +126,7 @@ include_once 'controllers/UserSession.php';
 
         <div class="footer-center">
             <div>
-                <i class="fa fa-map-marker"></i><p><span>Fundacion Gloria Krite</span> Santa Ana, El salvador</p>
+                <i class="fa fa-map-marker"></i><p><span>Fundación Gloria Kriete</span> Santa Ana, El salvador</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i><p>+503 7000 ----</p>
@@ -139,7 +139,7 @@ include_once 'controllers/UserSession.php';
         <div class="footer-right">
             <p class="footer-company-about">
                 <span>Acerca de Mí</span>
-                Esta plantilla fue creada con fines educativos, para realizar los ejercicios del centro de desarrollo de software en la Fundación Gloria Krite.
+                Esta plantilla fue creada con fines educativos, para realizar los ejercicios del centro de desarrollo de software en la Fundación Gloria Kriete.
             </p>
             <div class="footer-icons">
                 <a href="#"><i class="fab fa-facebook-square"></i></a>

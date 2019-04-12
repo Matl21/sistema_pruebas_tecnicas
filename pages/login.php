@@ -19,7 +19,7 @@
                 </div>
                 <form action="" class="col-12">
                     <div class="form-group">
-                        <h3>Inicio de Sessión</h3>
+                        <h3>Inicio de Sesión</h3>
                     </div>
                     <div class="form-group" id="user-group">
                         <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario" aria-describedby="helpId" required>
@@ -33,7 +33,7 @@
                     </div>
                 </form>
                 <div class="col-12 forgot">
-                    <a href="" class="no_subraya">¿Olvidates tu consetraseña?</a>
+                    <a href="" class="no_subraya">¿Olvidates tu contraseña?</a>
                 </div>
             </div>
         </div>

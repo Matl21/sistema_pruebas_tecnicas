@@ -39,13 +39,13 @@ $estudiantes = $estudianteController->read();
 echo "<div class=\"table-responsive-md\">
 <table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
-    <th>id respuesta</th>
+    <th>ID respuesta</th>
     <th>Pregunta</th>
     <th>Estudiante</th>
     <th>Respuesta</th>
     <th>Fecha</th>
     <th>Tipo pregunta</th>
-    <th>valoracion</th>
+    <th>Valoración</th>
     <th>Revisión</th>
     <th colspan='2'>Acciones</th>
 </tr>";

@@ -66,7 +66,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
             <br />
-            <h3>Registar Estudiante</h3>
+            <h3>Registrar Estudiante</h3>
             <hr>
 
             <form method="post">

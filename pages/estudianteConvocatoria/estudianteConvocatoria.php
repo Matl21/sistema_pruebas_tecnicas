@@ -33,10 +33,10 @@ echo "<div class=\"table-responsive-md\">
 <table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
     <th>id</th>
-    <th>convocatoria</th>
-    <th>estudiante</th>
-    <th>municipio</th>
-    <th>lugar</th>
+    <th>Convocatoria</th>
+    <th>Estudiante</th>
+    <th>Municipio</th>
+    <th>Lugar</th>
     
     <th colspan='2'>Acciones</th>
 </tr>";

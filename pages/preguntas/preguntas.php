@@ -59,7 +59,7 @@ echo "<div class=\"table-responsive-md\">
 <tr>
     <th>id</th>
     <th>Convocatoria</th>
-    <th>Titulo</th>
+    <th>Título</th>
     <th>Descripción</th>
     <th>Etapa</th>
     <th>Fecha Creación</th>

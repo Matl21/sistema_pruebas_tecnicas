@@ -52,7 +52,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="far fa-file-alt"></i></div>
         </div>
-    <textarea type="text" class="form-control" name="descripcion" id="id_descripcion" placeholder="Descripcion" ></textarea>
+    <textarea type="text" class="form-control" name="descripcion" id="id_descripcion" placeholder="Descripción" ></textarea>
   </div>
   <br/>
   <div class="form-group">

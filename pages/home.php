@@ -75,7 +75,7 @@
                             <span class="ca-icon"><i class="fas fa-users"></i></span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Usuarios</h2>
-                                <h3 class="ca-sub">Administracion de usuarios</h3>
+                                <h3 class="ca-sub">Administración de usuarios</h3>
                             </div>
                         </a>
                     </li>

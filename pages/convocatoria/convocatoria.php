@@ -34,7 +34,7 @@ echo "<div class=\"table-responsive-md\">
 <tr>
     <th>id</th>
     <th>Nombre</th>
-    <th>Descripcion</th>
+    <th>Descripción</th>
     <th colspan='2'>Acciones</th>
 </tr>";
 for ($i=0; $i <count($convocatoria) ; $i++) { 
