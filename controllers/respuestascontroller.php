@@ -49,5 +49,9 @@ class RespuestasController {
 		public function estudianteRespuestasValoradas(){
 			return $this->model->estudianteRespuestasValoradas();
 		}
+
+		public function revisarValoraciones($id_estudiante = ''){
+			return $this->model->revisarValoraciones($id_estudiante);
+		}
     
 }

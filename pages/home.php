@@ -17,8 +17,8 @@
                         <a href="index.php?contenido=pages/examenes/seleccion.php">
                             <span class="ca-icon"><i class="fas fa-pen-nib"></i></span>
                             <div class="ca-content">
-                                <h2 class="ca-main">Examenes</h2>
-                                <h3 class="ca-sub">Realizar un examen para algun estudiante</h3>
+                                <h2 class="ca-main">Exámenes</h2>
+                                <h3 class="ca-sub">Realizar un exámen para algún estudiante</h3>
                             </div>
                         </a>
                     </li>

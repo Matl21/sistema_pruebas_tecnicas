@@ -214,7 +214,7 @@ echo "
 <td>". $valoracionesRealizados[$i]['nombre'] ."</td>
 <td>". $valoracionesRealizados[$i]['apellido'] ."</td>
 <td class='content_center'> 
-<button type=\"button\" class=\"btn btn-info \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/mostrarRespuestas.php&id_estudiante=".$valoracionesRealizados[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
+<button type=\"button\" class=\"btn btn-info \" name=\"btn_tb_editar\" onclick=\"window.location.href='index.php?contenido=pages/respuestas/revisarValoraciones.php&id_estudiante=".$valoracionesRealizados[$i]['id_estudiante']."'\" ><i class=\"fas fa-edit\"></i>Ver Respuestas</button> 
 </td>
 </tr>";
 }

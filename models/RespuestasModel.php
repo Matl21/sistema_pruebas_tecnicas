@@ -180,6 +180,22 @@ class RespuestasModel extends Model  {
         }
         return $data;
     }
+    
+    public function revisarValoraciones($id_estudiante = ''){
+        $data = array();
+        try {
+            $this->query = "SELECT * FROM respuestas r INNER JOIN preguntas p ON r.id_pregunta = p.id_pregunta WHERE r.revision = true AND r.id_estudiante=$id_estudiante;";
+            $this->get_query();
+
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        } catch (Exception $e) {
+            //Mensaje de error al no poder obtener los registros
+            echo "No se pudo obtener el registro buscado: ".$e->errorMessage(); 
+        }
+        return $data;
+    }
 
     //Metodo que se encarga de limpiar la variable this
 	public function __destruct() {
