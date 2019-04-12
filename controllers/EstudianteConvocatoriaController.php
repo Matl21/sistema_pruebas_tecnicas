@@ -25,7 +25,11 @@ class EstudianteConvocatoriaController {
 
     public function findById($id_estudiante_convocatoria = ''){
         return $this->model->findById($id_estudiante_convocatoria);
-    }
+		}
+		
+		public function estudianteSinConvocatoria(){
+			return $this->model->estudianteSinConvocatoria();
+		}
     
 	public function __destruct() {
 		//unset($this);

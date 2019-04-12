@@ -11,7 +11,7 @@ $convocatoriaController = new ConvocatoriaController();
 $estudianteController = new EstudianteController();
 
 $convocatoria = $convocatoriaController->read();
-$estudiantes = $estudianteController->read();
+$estudiantes = $estudianteConvocatoriaController->estudianteSinConvocatoria();
 
 if (isset($_POST['btn_estudiante'])) {  
   //Conversion de los datos a arreglo
@@ -32,7 +32,7 @@ if (isset($_POST['btn_convocatoria'])) {
     //Mensaje de Nuevo registro
     Components::messageAgregar();
     //redireccionar a la pagina de mantenimiento
-    //header('Location: index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php');
+    header('Location: index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php');
   }
 
 if (isset($_POST['btn_regresar'])) {
@@ -129,7 +129,7 @@ if (isset($_POST['btn_regresar'])) {
                     <button type="submit" name="btn_estudiante" class="btn btn-primary">Guardar <i
                             class="far fa-save"></i></button>
                     <button type="button" name="btn_regresar" class="btn btn-danger"
-                        onclick="window.location.href='index.php?contenido=pages/estudiantes/estudiantes.php'">Regresar
+                        onclick="window.location.href='index.php'">Regresar
                         <i class="fas fa-share-square"></i></button>
                 </div>
             </form>
@@ -194,10 +194,10 @@ if (isset($_POST['btn_regresar'])) {
                 </div>
                 <br/>
                 <div class="form-group">
-                    <button type="submit" name="btn_agregar" class="btn btn-primary">Guardar <i
+                    <button type="submit" name="btn_convocatoria" class="btn btn-primary">Guardar <i
                             class="far fa-save"></i></button>
                     <button type="button" name="btn_regresar" class="btn btn-danger"
-                        onclick="window.location.href='index.php?contenido=pages/estudianteConvocatoria/estudianteConvocatoria.php'">Regresar
+                        onclick="window.location.href='index.php'">Regresar
                         <i class="fas fa-share-square"></i></button>
                 </div>
             </form>

@@ -33,8 +33,8 @@ echo "<div class=\"table-responsive-md\">
 <table class=\"table table-sm table-bordered table-striped table-hover table_mant\">
 <tr>
     <th>id</th>
-    <th>id_convocatoria</th>
-    <th>id_estudiante</th>
+    <th>convocatoria</th>
+    <th>estudiante</th>
     <th>municipio</th>
     <th>lugar</th>
     
@@ -44,8 +44,8 @@ for ($i=0; $i <count($estudienteConvocatoria) ; $i++) {
 echo "
 <tr>
 <td name='id_estudiante_convocatoria'>". $estudienteConvocatoria[$i]['id_estudiante_convocatoria'] ."</td>
-<td>". $estudienteConvocatoria[$i]['id_convocatoria'] ."</td>
-<td>". $estudienteConvocatoria[$i]['id_estudiante'] ."</td>
+<td>". $estudienteConvocatoria[$i]['convocatoria'] ."</td>
+<td>". $estudienteConvocatoria[$i]['participante'] ."</td>
 <td>". $estudienteConvocatoria[$i]['municipio'] ."</td>
 <td>". $estudienteConvocatoria[$i]['lugar'] ."</td>
 

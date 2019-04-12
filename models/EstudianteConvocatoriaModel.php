@@ -28,7 +28,7 @@ class EstudianteConvocatoriaModel extends Model  {
     
     //Metodo que obtine los registros de la base de datos
     public function read(){
-        $this->query = "SELECT * FROM estudiante_convocatoria";
+        $this->query = "SELECT *,c.nombre as convocatoria, concat(e.nombre,' ',e.apellido) as participante FROM estudiante_convocatoria ec INNER JOIN estudiante e ON ec.id_estudiante = e.id_estudiante INNER JOIN convocatoria c ON ec.id_convocatoria = c.id_convocatoria;";
         $this->get_query();
 
         $data = array();
@@ -56,6 +56,17 @@ class EstudianteConvocatoriaModel extends Model  {
     //Metodo que se encarga de obtener el registro en base al ID
     public function findById($id_estudiante_convocatoria = ''){
         $this->query = "SELECT * FROM estudiante_convocatoria WHERE id_estudiante_convocatoria = $id_estudiante_convocatoria;";
+        $this->get_query();
+
+        $data = array();
+        foreach ($this->rows as $key => $value) {
+            array_push($data, $value);
+        }
+        return $data;
+    }
+
+    public function estudianteSinConvocatoria(){
+        $this->query = "SELECT e.id_estudiante,e.nombre,e.apellido FROM estudiante e LEFT JOIN estudiante_convocatoria ec ON e.id_estudiante = ec.id_estudiante WHERE ec.id_estudiante IS NULL;";
         $this->get_query();
 
         $data = array();

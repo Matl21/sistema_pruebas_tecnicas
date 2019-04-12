@@ -12,7 +12,7 @@ $convocatoriaController = new ConvocatoriaController();
 $estudianteController = new EstudianteController();
 
 $convocatoria = $convocatoriaController->read();
-$estudiantes = $estudianteController->read();
+$estudiantes = $estudianteConvocatoriaController->estudianteSinConvocatoria();
 
 if (isset($_POST['btn_agregar'])) {  
   //Conversion de los datos a arreglo
