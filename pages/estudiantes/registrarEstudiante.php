@@ -180,7 +180,7 @@ if (isset($_POST['btn_regresar'])) {
                             <div class="input-group-text"><i class="fas fa-place-of-worship"></i></div>
                         </div>
                         <input type="text" class="form-control" name="municipio" id="id_municipio"
-                            placeholder="municipio" required>
+                            placeholder="municipio" minlength="2" maxlength="64" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -189,7 +189,7 @@ if (isset($_POST['btn_regresar'])) {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-place-of-worship"></i></div>
                         </div>
-                        <input type="text" class="form-control" name="lugar" id="id_lugar" placeholder="lugar" required>
+                        <input type="text" class="form-control" name="lugar" id="id_lugar" minlength="2" maxlength="64" placeholder="lugar" required>
                     </div>
                 </div>
                 <br/>

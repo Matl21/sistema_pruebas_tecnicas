@@ -8,6 +8,7 @@ require_once('./class/Components.php');
 
 //Instacia de la clase controlador
 $estudianteConvocatoriaController = new EstudianteConvocatoriaController();
+$estudianteConvocatoriaController2 = new EstudianteConvocatoriaController();
 $convocatoriaController = new ConvocatoriaController();
 $estudianteController = new EstudianteController();
 
@@ -18,6 +19,7 @@ $estudianteConvocatoria = array();
 if (isset($_GET['id'])) {
 $id = $_GET['id'];
 $estudianteConvocatoria= $estudianteConvocatoriaController->findById($id);
+$estudianteConvocatoria2 = $estudianteConvocatoriaController->read();
 
 if (isset($_POST['btn_editar'])) {  
     //Conversion de los datos a arreglo
@@ -47,7 +49,7 @@ if (isset($_POST['btn_regresar'])) {
 </head>
 <body>
 
-<h3>Nuevo Registro</h3>
+<h3>Modificar registro</h3>
 <hr>
 
 <form method="post">
@@ -65,7 +67,7 @@ if (isset($_POST['btn_regresar'])) {
   <div class="form-group">
     <label for="id_estudiante">Estudiante</label>
     <select class="form-control" name="id_estudiante" id="id_estudiante" placeholder="id_estudiante" required>
-    <option value="<?php echo $estudianteConvocatoria[0]['id_estudiante'] ?>"><?php echo $estudiantes[$estudianteConvocatoria[0]['id_estudiante']-1]['nombre']." ".$estudiantes[$estudianteConvocatoria[0]['id_estudiante']-1]['apellido'] ?></option>
+    <option value="<?php echo $estudianteConvocatoria[0]['id_estudiante'] ?>"><?php echo $estudianteConvocatoria2[$id]['participante'] ?></option>
         <?php 
         for ($i=0; $i <count($estudiantes) ; $i++) { 
             echo "<option value=\"".$estudiantes[$i]['id_estudiante']."\">".$estudiantes[$i]['nombre']." ".$estudiantes[$i]['apellido'] ."</option>";
