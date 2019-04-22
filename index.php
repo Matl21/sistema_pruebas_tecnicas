@@ -28,13 +28,14 @@ include_once 'controllers/UserSession.php';
     <!-- CSS Mantenimientos del CRUD-->
     <link rel="stylesheet" href="public/css/mantenimientos.css">
 
+
     
 </head>
 <body>
     <header id="header">
         <nav class="menu">
             <div class="logo_usaid">
-                <a href="https://www.facebook.com/CDSSAFGK/"><img src="public/img/logo/usaid_es.jpg" alt=""></a>
+                <a href="https://www.facebook.com/CDSSAFGK/"><img src="public/img/logo/usaid_es.png" alt=""></a>
                 <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
             </div>
             <div class="enlaces" id="enlaces">

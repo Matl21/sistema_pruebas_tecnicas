@@ -79,6 +79,15 @@
                             </div>
                         </a>
                     </li>
+                    <li class="roles">
+                        <a href="index.php?contenido=pages/rol/rol.php">
+                            <span class="ca-icon"><i class="fas fa-user-lock"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Roles</h2>
+                                <h3 class="ca-sub">Nivel de acceso de usuarios</h3>
+                            </div>
+                        </a>
+                    </li>
                     <li class="respuestas">
                         <a href="index.php?contenido=pages/respuestas/respuestas.php">
                             <span class="ca-icon"><i class="fas fa-edit"></i></span>

@@ -21,7 +21,7 @@ if (isset($_POST['btn_estudiante'])) {
   //Mensaje de Nuevo registro
   Components::messageAgregar();
   //redireccionar a la pagina de mantenimiento
-  //header('Location: index.php?contenido=pages/estudiantes/estudiantes.php');
+  header("Refresh:0.75");
 }
 
 if (isset($_POST['btn_convocatoria'])) {  
@@ -168,7 +168,7 @@ if (isset($_POST['btn_regresar'])) {
                     </div>
                     <?php 
         for ($i=0; $i <count($estudiantes) ; $i++) { 
-            echo "<option value=\"".$estudiantes[$i]['id_estudiante']."\">".$estudiantes[$i]['nombre']."</option>";
+            echo "<option value=\"".$estudiantes[$i]['id_estudiante']."\">".$estudiantes[$i]['nombre']." ". $estudiantes[$i]['apellido']."</option>";
         }
         ?>
                     </select>
