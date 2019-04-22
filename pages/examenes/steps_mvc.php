@@ -117,7 +117,9 @@ if (isset($_POST['btn_enviar'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                <td >
+                    <label>1.1	Elaborar la sintaxis de un pseudocódigo según la nomenclatura preestablecida </label>
+                    </td>
                     <td>
                         <?php Components::generarRadios('respuesta1',5); ?>
                     </td>

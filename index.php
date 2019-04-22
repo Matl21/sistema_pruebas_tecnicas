@@ -41,6 +41,7 @@ include_once 'controllers/UserSession.php';
             <div class="enlaces" id="enlaces">
                 <ul class="ul_enlaces">
                     <li><a href="index.php?contenido=pages/home.php"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a></li>
+                    <!--
                     <li>Mantenimientos
                         <ul class="submenu">
                             <li><a href="index.php?contenido=pages/estudiantes/estudiantes.php"><i class="fas fa-code" aria-hidden="true"></i> Estudiantes</a></li>
@@ -52,6 +53,7 @@ include_once 'controllers/UserSession.php';
                             <li><a href="index.php?contenido=pages/respuestas/respuestas.php"><i class="fas fa-code"></i> Respuestas</a></li>
                         </ul>
                     </li>
+                    -->
                     <li><a href="index.php?contenido=pages/about_us.php"><i class="far fa-address-book"></i> Contactar</a></li>
                     <li><a href="index.php?contenido=pages/login.php"><i class="far fa-user-circle"></i>Iniciar Sesión</a></li>
                     <li><a href="index.php?contenido=pages/logout.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a></li>
