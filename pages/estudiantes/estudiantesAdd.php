@@ -42,7 +42,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-user-edit"></i></div>
         </div>
-    <input type="text" id="nombre" class="form-control" name="nombre" id="id_nombre" placeholder="Nombre del estudiante" required>
+    <input type="text" id="nombre" class="form-control" name="nombre" minlength="2" maxlength="64" id="id_nombre" placeholder="Nombre del estudiante" required>
   </div>
   <div class="form-group">
     <label for="id_apellido">Apellido</label>
@@ -50,7 +50,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-user-edit"></i></div>
         </div>
-    <input type="text" id="apellido" class="form-control" name="apellido" id="id_apellido" placeholder="Apellido del estudiante" required>
+    <input type="text" id="apellido" class="form-control" name="apellido" minlength="2" maxlength="64" id="id_apellido" placeholder="Apellido del estudiante" required>
   </div>
   <div class="form-group">
     <label for="id_email">E-mail</label>
@@ -58,7 +58,7 @@ if (isset($_POST['btn_regresar'])) {
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="far fa-envelope"></i></div>
         </div>
-    <input type="email" id="email" class="form-control" name="email" id="id_email" placeholder="Correo"  required>
+    <input type="email" id="email" class="form-control" name="email" id="id_email" minlength="2" maxlength="100" placeholder="Correo"  required>
   </div>
   <div class="form-group">
     <label for="sexo">Sexo</label>

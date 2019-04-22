@@ -82,6 +82,12 @@ if (isset($_POST['btn_enviar'])) {
             width: 80%;
         }
     }
+    @media only screen and (max-width: 650px) {
+        .div-derecho{
+            min-width: 0px;
+            width: 100%;
+        }
+    }
     </style>
 </head>
 <body>
